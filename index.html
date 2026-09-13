@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de conteúdo para quem vende por grupo fechado · Gabriel Vicente</title>
+  <meta name="description" content="Eu faço o conteúdo que leva comprador para o seu grupo fechado. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
+  <link rel="icon" type="image/png" href="identidade/simbolos.png">
+  <link rel="canonical" href="https://gvdesiigner.com.br/conteudo">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gestão de conteúdo para quem vende por grupo fechado">
+  <meta property="og:description" content="O conteúdo enche o grupo. O grupo vende. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
+  <meta property="og:image" content="https://gvdesiigner.com.br/og-conteudo.png">
+  <meta property="og:url" content="https://gvdesiigner.com.br/conteudo">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter/X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gestão de conteúdo para quem vende por grupo fechado">
+  <meta name="twitter:description" content="O conteúdo enche o grupo. O grupo vende. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
+  <meta name="twitter:image" content="https://gvdesiigner.com.br/og-conteudo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ─── LOADER ──────────────────────────────────────────── */
+#loader{
+  position:fixed;inset:0;background:#0A0A0A;z-index:9999;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:28px;
+  transition:opacity .4s ease;
+}
+#loader-logo{
+  opacity:0;
+  animation:loader-logo-in .9s cubic-bezier(0.16,1,0.3,1) .1s forwards;
+}
+#loader-logo img{height:40px;width:auto;display:block}
+@keyframes loader-logo-in{
+  0%{opacity:0;transform:translateY(12px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+#loader-track{
+  width:200px;height:2px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;
+}
+#loader-bar{
+  height:100%;width:0%;border-radius:2px;
+  background:#bd4905;
+  box-shadow:0 0 8px #bd4905,0 0 18px rgba(189,73,5,.7),0 0 36px rgba(189,73,5,.4);
+  transition:width 1.8s cubic-bezier(0.1,0.6,0.4,1);
+}
+#loader-pct{
+  font-size:11px;font-weight:600;letter-spacing:.1em;
+  color:rgba(255,255,255,.3);text-align:right;margin-top:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+
+/* ─── TOKENS ──────────────────────────────────────────── */
+:root {
+  --bg:      #0A0A0A;
+  --surface: #111111;
+  --border:  rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --text:    #FFFFFF;
+  --muted:   rgba(255,255,255,0.45);
+  --faint:   rgba(255,255,255,0.2);
+  --accent:  #bd4905;
+  --aglow:   rgba(189,73,5,0.15);
+  --before:  #6b6b6b;
+  --strong:  rgba(255,255,255,0.8);
+  --iconbr:  rgba(189,73,5,0.28);
+  --rule:    rgba(255,255,255,0.06);
+  --font:    'Plus Jakarta Sans', sans-serif;
+  --ease:    cubic-bezier(0.16,1,0.3,1);
+}
+
+/* ─── RESET ───────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:var(--font)}
+
+/* ─── BACKGROUND GRID ─────────────────────────────────── */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none;z-index:0;
+}
+nav,section,footer,.fab{position:relative;z-index:1}
+
+/* ─── CONTAINER ───────────────────────────────────────── */
+.container{max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,72px)}
+
+/* ─── BUTTONS ─────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;
+  border-radius:100px;font-size:14px;font-weight:600;border:none;
+  transition:all .25s var(--ease);white-space:nowrap;font-family:var(--font)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#a33d03;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.04);transform:translateY(-1px)}
+.btn-lg{padding:16px 36px;font-size:15px}
+.btn-sm{padding:9px 18px;font-size:13px}
+
+/* ─── LABELS / TAGS ───────────────────────────────────── */
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;
+  border:1px solid var(--border2);border-radius:100px;
+  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.chip-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
+.accent-text{color:var(--accent)}
+
+/* ─── HEADINGS ────────────────────────────────────────── */
+.h1{font-size:clamp(2.05rem,4vw,3.25rem);font-weight:900;letter-spacing:-.04em;line-height:1.07}
+.h2{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:800;letter-spacing:-.035em;line-height:1.1}
+
+/* ─── DIVIDER ─────────────────────────────────────────── */
+.divider{height:1px;background:var(--border)}
+
+
+/* ─── SCROLL REVEAL ───────────────────────────────────── */
+[data-r]{opacity:0;transform:translateY(24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+[data-r="fade"]{transform:none}
+[data-r].on{opacity:1;transform:none}
+
+/* ══════════════════════════════════════════════════════
+   NAV
+══════════════════════════════════════════════════════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;
+  transition:background .4s var(--ease),border-color .4s var(--ease),padding .3s var(--ease);
+  border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(10,10,10,.88);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);border-color:var(--border);padding:13px 0}
+.nav-inner{display:flex;align-items:center;gap:24px}
+.logo{font-size:18px;font-weight:800;letter-spacing:-.02em;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:28px;margin-left:auto}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);transition:color .2s;letter-spacing:.02em;text-transform:uppercase}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{margin-left:16px;flex-shrink:0}
+.menu-btn{display:none;background:transparent;border:1px solid var(--border2);border-radius:8px;
+  color:var(--text);padding:8px 14px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+
+/* ══════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════ */
+.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden}
+/* A coluna esquerda alinha com o container; a direita vai até a borda da tela.
+   Usa 100% da seção (não 100vw) pra não contar a barra de rolagem. */
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr 1fr;align-items:center;
+  gap:clamp(28px,4vw,60px);
+  max-width:1160px;margin:0 auto;
+  padding:0 clamp(20px,5vw,72px);
+}
+.hero-tag{margin-bottom:28px}
+.hero-title{margin-bottom:22px}
+.hero-sub{font-size:clamp(15px,1.8vw,17px);color:var(--muted);line-height:1.7;margin-bottom:36px;max-width:440px}
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+
+/* placar do herói */
+.placar{display:grid;grid-template-columns:repeat(3,auto);gap:clamp(18px,3vw,34px);
+  padding-top:28px;border-top:1px solid var(--border)}
+.placar-num{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.045em;line-height:1}
+.placar-label{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.45}
+.placar-fonte{font-size:11px;color:var(--faint);margin-top:18px;line-height:1.55;grid-column:1/-1}
+
+/* visual do herói */
+.hero-visual{position:relative}
+.mock-frame{position:relative}
+.mock-frame img{width:100%;height:auto;aspect-ratio:900/484}
+@media(min-width:961px){.mock-frame img{aspect-ratio:1500/893}}
+.mock-glow{
+  position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);
+  width:78%;height:78%;border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(189,73,5,.30),transparent 68%);
+  filter:blur(46px);pointer-events:none;z-index:0;
+}
+/* ══════════════════════════════════════════════════════
+   PROVA
+══════════════════════════════════════════════════════ */
+.prova{padding:clamp(72px,10vw,130px) 0}
+.prova-header{max-width:720px;margin-bottom:clamp(40px,5vw,60px)}
+.prova-header .h2{margin-bottom:16px}
+.prova-header p{color:var(--muted);font-size:16px;line-height:1.7}
+
+.prova-inner{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:clamp(28px,4vw,52px);align-items:start;margin-bottom:clamp(48px,6vw,76px)}
+.print-wrap{position:relative}
+.print-frame{
+  position:relative;z-index:1;
+  border-radius:18px;overflow:hidden;
+  animation:print-lados 5s ease-in-out infinite;
+}
+/* halo quente só nas laterais, respirando devagar */
+@keyframes print-lados{
+  0%,100%{box-shadow:0 24px 56px rgba(0,0,0,.30),0 6px 18px rgba(0,0,0,.16),
+          -12px 0 30px -8px rgba(189,73,5,.30), 12px 0 30px -8px rgba(189,73,5,.30)}
+  50%    {box-shadow:0 24px 56px rgba(0,0,0,.30),0 6px 18px rgba(0,0,0,.16),
+          -22px 0 48px -8px rgba(224,99,15,.62), 22px 0 48px -8px rgba(224,99,15,.62)}
+}
+@media(prefers-reduced-motion:reduce){
+  .print-frame{animation:none;
+    box-shadow:0 24px 56px rgba(0,0,0,.30),0 6px 18px rgba(0,0,0,.16),
+    -16px 0 38px -8px rgba(189,73,5,.42),16px 0 38px -8px rgba(189,73,5,.42)}
+}
+.print-frame img{width:100%;height:auto}
+.print-legenda{font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:16px}
+.print-legenda b{color:var(--strong);font-weight:600}
+
+.prova-leitura{display:flex;flex-direction:column;gap:14px}
+/* enquanto o print está fora, os três cards ocupam a largura toda */
+.prova-inner.sem-print{grid-template-columns:1fr}
+.prova-inner.sem-print .prova-leitura{display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(14px,2vw,20px)}
+@media(max-width:860px){
+  .prova-inner.sem-print .prova-leitura{grid-template-columns:1fr}
+}
+.leitura-item{background:var(--surface);border:1px solid var(--border);border-radius:20px;
+  padding:clamp(22px,3vw,30px);transition:border-color .3s var(--ease)}
+.leitura-item:hover{border-color:var(--border2)}
+.leitura-num{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-.05em;
+  color:var(--accent);line-height:1;margin-bottom:10px}
+.leitura-title{font-size:15px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px}
+.leitura-text{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* ══════════════════════════════════════════════════════
+   GRÁFICOS
+══════════════════════════════════════════════════════ */
+.ev-topo{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  flex-wrap:wrap;margin-bottom:26px}
+.ev-topo .section-label{margin-bottom:8px}
+.ev-topo h3{font-size:clamp(1.3rem,2.2vw,1.75rem);font-weight:800;letter-spacing:-.03em;line-height:1.2}
+.ev-legenda{display:flex;gap:18px;flex-wrap:wrap}
+.ev-key{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted)}
+.ev-swatch{width:12px;height:12px;border-radius:3px;flex:none}
+.sw-antes{background:var(--before)}
+.sw-transicao{background:repeating-linear-gradient(45deg,var(--before) 0 3px,rgba(107,107,107,.3) 3px 7px)}
+.sw-agora{background:var(--accent)}
+.sw-parcial{background:repeating-linear-gradient(45deg,var(--accent) 0 3px,rgba(189,73,5,.22) 3px 7px)}
+
+.ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.2vw,22px)}
+.ev-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;
+  padding:clamp(20px,2.6vw,28px);transition:border-color .3s var(--ease);min-width:0}
+.ev-card:hover{border-color:var(--border2)}
+.ev-title{font-size:15px;font-weight:700;letter-spacing:-.02em}
+.ev-sub{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.55}
+.ev-plot{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;margin-top:22px}
+.ev-ticks{display:flex;flex-direction:column;justify-content:space-between;height:224px;
+  font-size:10px;color:var(--faint);text-align:right;font-variant-numeric:tabular-nums;
+  padding-bottom:0;line-height:1}
+.ev-area{position:relative;height:224px}
+.ev-rules{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between}
+.ev-rules i{display:block;height:1px;background:var(--rule)}
+.ev-cols{position:absolute;inset:0;display:flex;gap:2px;align-items:flex-end}
+.ev-col{flex:1;min-width:0;height:100%;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.ev-bar{width:100%;max-width:22px;min-height:2px;border-radius:4px 4px 0 0;background:var(--before);
+  transition:filter .2s}
+.ev-col.is-transicao .ev-bar{background:repeating-linear-gradient(45deg,var(--before) 0 3px,rgba(107,107,107,.3) 3px 7px)}
+.ev-col.is-agora .ev-bar{background:var(--accent)}
+.ev-col.is-parcial .ev-bar{background:repeating-linear-gradient(45deg,var(--accent) 0 3px,rgba(189,73,5,.22) 3px 7px)}
+.ev-col:hover .ev-bar{filter:brightness(1.25)}
+.ev-val{position:absolute;left:50%;transform:translateX(-50%);
+  font-size:10.5px;font-weight:700;color:var(--strong);white-space:nowrap;
+  font-variant-numeric:tabular-nums;pointer-events:none}
+.ev-tip{position:absolute;left:50%;bottom:100%;transform:translate(-50%,-10px);
+  background:#0A0A0A;color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:8px;
+  padding:7px 11px;font-size:11px;line-height:1.45;
+  width:max-content;max-width:150px;text-align:center;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s;z-index:5}
+.ev-tip b{display:block;font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+/* colunas das pontas ancoram o tooltip na borda, pra não estourar o card */
+.ev-col:nth-child(-n+2) .ev-tip{left:0;transform:translate(0,-10px);text-align:left}
+.ev-col:nth-last-child(-n+2) .ev-tip{left:auto;right:0;transform:translate(0,-10px);text-align:right}
+/* sem hover (toque) o tooltip não existe: a tabela abaixo carrega os valores */
+@media(hover:none){.ev-tip{display:none}}
+/* o tooltip é sempre escuro, então não segue os tokens da seção */
+.ev-tip span{color:rgba(255,255,255,.62)}
+.ev-col:hover .ev-tip{opacity:1;visibility:visible}
+.ev-xs{display:flex;gap:2px;margin-top:9px}
+.ev-xs span{flex:1;min-width:0;text-align:center;font-size:9.5px;color:var(--faint);
+  letter-spacing:.02em;overflow:hidden}
+.ev-nota{font-size:11px;color:var(--faint);line-height:1.6;margin-top:16px}
+
+/* gráfico de linha */
+.ev-card--linha{grid-column:1/-1}
+.ev-line-wrap{margin-top:20px}
+.ev-line-wrap svg{width:100%;height:auto;display:block}
+.ev-line-hit{fill:transparent;cursor:default}
+.ev-line-wrap .svg-rule{stroke:var(--rule)}
+.ev-line-wrap .svg-tick text{fill:var(--faint)}
+.ev-line-wrap .svg-lbl text{fill:var(--strong)}
+.ev-line-wrap circle{stroke:var(--surface)}
+/* o SVG largo fica ilegível quando encolhe: no estreito entra a versão vertical */
+.ev-line-wrap .svg-mob{display:none}
+@media(max-width:760px){
+  .ev-line-wrap .svg-desk{display:none}
+  .ev-line-wrap .svg-mob{display:block}
+}
+
+/* tabela */
+.ev-tabela{margin-top:22px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--surface)}
+.ev-tabela summary{list-style:none;cursor:pointer;padding:15px 20px;font-size:13px;font-weight:600;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--strong)}
+.ev-tabela summary::-webkit-details-marker{display:none}
+.ev-tabela summary::after{content:'+';font-size:16px;color:var(--muted);transition:transform .3s var(--ease)}
+.ev-tabela[open] summary::after{transform:rotate(45deg)}
+.ev-scroll{overflow-x:auto;border-top:1px solid var(--border)}
+.ev-tabela table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:560px}
+.ev-tabela th,.ev-tabela td{padding:11px 16px;text-align:right;white-space:nowrap;
+  border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
+.ev-tabela th:first-child,.ev-tabela td:first-child{text-align:left;font-variant-numeric:normal}
+.ev-tabela th{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint)}
+.ev-tabela tbody tr:last-child td{border-bottom:none}
+.ev-tabela td{color:var(--muted)}
+.ev-tabela tr.marcado td{color:var(--text);font-weight:600}
+
+.fonte-bloco{margin-top:26px;padding-top:22px;border-top:1px solid var(--border);
+  font-size:11.5px;color:var(--faint);line-height:1.7;max-width:820px}
+.fonte-bloco b{color:var(--muted);font-weight:600}
+
+/* ══════════════════════════════════════════════════════
+   PARA QUEM É
+══════════════════════════════════════════════════════ */
+.publico{padding:clamp(72px,10vw,130px) 0}
+.publico-header{max-width:700px;margin-bottom:clamp(40px,5vw,60px)}
+.publico-header .h2{margin-bottom:16px}
+.publico-header p{color:var(--muted);font-size:16px;line-height:1.7}
+.publico-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.publico-col{background:var(--bg);padding:clamp(26px,3.5vw,42px)}
+.publico-col-title{font-size:17px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
+.publico-col-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.publico-list{display:flex;flex-direction:column;gap:13px}
+.publico-list li{list-style:none;display:flex;gap:12px;align-items:flex-start;
+  font-size:14px;line-height:1.6;color:rgba(255,255,255,.82)}
+.publico-list li span{font-size:13px;color:var(--muted)}
+.mark{width:20px;height:20px;border-radius:50%;flex:none;display:flex;align-items:center;
+  justify-content:center;margin-top:1px}
+.mark-sim{background:var(--aglow);border:1px solid rgba(189,73,5,.3)}
+.mark-nao{background:rgba(255,255,255,.05);border:1px solid var(--border2)}
+.publico-nota{font-size:13px;color:var(--muted);line-height:1.7;margin-top:26px;
+  padding-top:22px;border-top:1px solid var(--border)}
+.publico-nota b{color:#fff;font-weight:700}
+
+/* ══════════════════════════════════════════════════════
+   COMO FUNCIONA
+══════════════════════════════════════════════════════ */
+.mecanismo{padding:clamp(72px,10vw,130px) 0}
+.mecanismo-header{max-width:700px;margin-bottom:clamp(36px,4.5vw,52px)}
+.promessa{
+  font-size:clamp(1.9rem,4.4vw,3.2rem);font-weight:900;letter-spacing:-.045em;line-height:1.12;
+  padding-bottom:.06em;
+  background:linear-gradient(100deg,#a03d04,#bd4905,#e0630f,#ff9d4d,#ffb066,#ff9d4d,#e0630f,#bd4905,#a03d04);
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:promessa-flow 9s linear infinite;
+}
+@keyframes promessa-flow{
+  0%{background-position:0% 50%}
+  100%{background-position:300% 50%}
+}
+@media(prefers-reduced-motion:reduce){.promessa{animation:none}}
+.mecanismo-sub{font-size:15px;color:var(--muted);line-height:1.75;margin-top:20px;max-width:620px}
+.mec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.mec-item{background:var(--bg);padding:clamp(24px,3vw,34px);display:flex;gap:16px;align-items:flex-start;
+  transition:background .3s var(--ease)}
+.mec-item:hover{background:var(--surface)}
+.mec-icon{width:36px;height:36px;flex:none;border-radius:9px;display:flex;align-items:center;justify-content:center;
+  background:var(--aglow);border:1px solid var(--iconbr)}
+.mec-step{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:9px}
+.mec-title{font-size:16px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px;line-height:1.35}
+.mec-text{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* ══════════════════════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════════════════════ */
+.cta-final{padding:clamp(72px,10vw,130px) 0;position:relative;overflow:hidden}
+.cta-glow{
+  position:absolute;top:-100px;left:50%;transform:translateX(-50%);
+  width:600px;height:300px;
+  background:radial-gradient(ellipse,rgba(189,73,5,.08),transparent 70%);
+  pointer-events:none;
+}
+.cta-box{
+  border:1px solid var(--border2);border-radius:24px;
+  padding:clamp(48px,8vw,100px) clamp(28px,6vw,80px);
+  text-align:center;
+  background:linear-gradient(180deg,rgba(189,73,5,.05) 0%,transparent 100%);
+  position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:220px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:.4;
+}
+.cta-box .h2{margin-bottom:18px;max-width:620px;margin-left:auto;margin-right:auto}
+.cta-box p{color:var(--muted);font-size:17px;margin-bottom:36px;max-width:470px;
+  margin-left:auto;margin-right:auto;line-height:1.65}
+.cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+/* ══════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════ */
+footer{padding:32px 0;border-top:1px solid var(--border)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-copy{font-size:12px;color:var(--faint)}
+.footer-links{display:flex;gap:20px;align-items:center}
+.footer-links a{font-size:12px;color:var(--faint);transition:color .2s}
+.footer-links a:hover{color:var(--muted)}
+
+/* ══════════════════════════════════════════════════════
+   FAB WHATSAPP
+══════════════════════════════════════════════════════ */
+.fab{
+  position:fixed;bottom:28px;right:28px;z-index:200;
+  width:54px;height:54px;border-radius:50%;background:#25d366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.35);
+  transition:transform .3s var(--ease),box-shadow .3s;
+}
+.fab:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.5)}
+
+/* ══════════════════════════════════════════════════════
+   FAIXA EM LOOP
+══════════════════════════════════════════════════════ */
+.faixa{
+  position:relative;overflow:hidden;z-index:1;
+  padding:clamp(14px,1.8vw,20px) 0;
+  background:linear-gradient(90deg,#7c2e02 0%,#a33d03 20%,#bd4905 38%,#e0630f 50%,#bd4905 62%,#a33d03 80%,#7c2e02 100%);
+  border-top:1px solid rgba(255,255,255,.12);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.faixa-track{display:flex;width:max-content;animation:faixa-roda 42s linear infinite}
+.faixa:hover .faixa-track{animation-play-state:paused}
+@keyframes faixa-roda{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.faixa-lista{
+  display:flex;align-items:center;flex:none;
+  gap:clamp(20px,2.8vw,38px);padding-right:clamp(20px,2.8vw,38px);
+}
+.faixa-lista span{
+  color:#fff;font-size:clamp(13px,1.5vw,15.5px);font-weight:700;
+  letter-spacing:.01em;white-space:nowrap;
+}
+.faixa-lista i{
+  width:6px;height:6px;border-radius:50%;flex:none;
+  background:rgba(255,255,255,.6);
+}
+@media(prefers-reduced-motion:reduce){.faixa-track{animation:none}}
+
+/* ══════════════════════════════════════════════════════
+   FUNDOS DE SEÇÃO · claro e laranja
+   Só trocam os tokens: os componentes seguem sozinhos.
+══════════════════════════════════════════════════════ */
+.sec-light{
+  /* off-white morno, não branco de papel.
+     Um tom só pra todo texto: a hierarquia vem do peso, não da opacidade. */
+  --bg:      #F3F1ED;
+  --surface: #FBFAF8;
+  --border:  rgba(20,17,15,0.13);
+  --border2: rgba(20,17,15,0.22);
+  --text:    rgba(20,17,15,0.86);
+  --muted:   rgba(20,17,15,0.86);
+  --faint:   rgba(20,17,15,0.86);
+  --strong:  rgba(20,17,15,0.86);
+  --rule:    rgba(20,17,15,0.13);
+  background:var(--bg);color:var(--text);
+  position:relative;overflow:hidden;
+}
+/* peso no lugar de opacidade */
+.sec-light .section-label{font-weight:800}
+.sec-light .ev-sub,
+.sec-light .ev-nota,
+.sec-light .print-legenda,
+.sec-light .fonte-bloco,
+.sec-light .leitura-text,
+.sec-light .prova-header p{font-weight:500}
+.sec-light .ev-ticks,
+.sec-light .ev-xs span{font-weight:600;opacity:.72}
+.sec-light .ev-tabela td{font-weight:500}
+.sec-light .ev-tabela th{font-weight:800}
+.sec-light .ev-tabela tr.marcado td{font-weight:800}
+.sec-light .print-legenda b,
+.sec-light .fonte-bloco b,
+.sec-light .ev-key{font-weight:700}
+.sec-light::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(20,17,15,0.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(20,17,15,0.035) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.sec-light .container{position:relative;z-index:1}
+.sec-light .accent-text{color:var(--accent)}
+
+.sec-orange{
+  --bg:      rgba(0,0,0,0.20);
+  --surface: rgba(0,0,0,0.30);
+  --border:  rgba(255,255,255,0.18);
+  --border2: rgba(255,255,255,0.28);
+  --text:    #FFFFFF;
+  --muted:   rgba(255,255,255,0.74);
+  --faint:   rgba(255,255,255,0.52);
+  --strong:  rgba(255,255,255,0.9);
+  --aglow:   rgba(255,255,255,0.16);
+  --iconbr:  rgba(255,255,255,0.3);
+  color:var(--text);
+  position:relative;overflow:hidden;
+}
+.sec-orange::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,#bd4905 0%,#a33d03 50%,#7c2e02 100%);
+}
+.sec-orange::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.sec-orange .container{position:relative;z-index:1}
+.sec-orange .mec-icon svg{stroke:#fff}
+/* o gradiente animado não sobrevive em cima do laranja */
+.sec-orange .promessa{
+  background:none;-webkit-text-fill-color:#fff;color:#fff;animation:none;
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+@media(max-width:960px){
+  .hero{min-height:auto;padding:120px 0 72px}
+  .hero-grid{grid-template-columns:1fr;text-align:center;gap:44px}
+  .hero-sub{max-width:100%;margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .placar{justify-content:center;text-align:center}
+  .hero-visual{order:-1}
+
+  .prova-inner{grid-template-columns:1fr}
+  .print-wrap{max-width:420px}
+  .publico-grid{grid-template-columns:1fr}
+  .mec-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .menu-btn{display:block;margin-left:auto}
+  .nav-cta{display:none}
+}
+@media(max-width:760px){
+  .ev-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .placar{grid-template-columns:1fr 1fr;gap:20px 18px;text-align:left;justify-content:start}
+  .placar-fonte{text-align:left}
+  .print-wrap{max-width:100%}
+  .ev-topo{align-items:flex-start}
+  .ev-xs span{font-size:8.5px}
+  .ev-val{font-size:9.5px}
+  .cta-actions .btn-lg{width:100%;justify-content:center;white-space:normal;line-height:1.35;
+    padding-left:22px;padding-right:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ LOADER ═════════════════════════════════════════════ -->
+<div id="loader">
+  <div id="loader-logo">
+    <img src="identidade/logopng02=white.png" alt="Gabriel Vicente" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-size:22px;font-weight:800;letter-spacing:-.02em;color:#fff\'>Gvdesiigner</span>')">
+  </div>
+  <div>
+    <div id="loader-track"><div id="loader-bar"></div></div>
+    <div id="loader-pct">0%</div>
+  </div>
+</div>
+
+<!-- ══ NAV ═══════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner container">
+    <a href="https://gvdesiigner.com.br" class="logo" id="logo-nav">
+      <img src="identidade/logopng02=white.png" alt="Gabriel Vicente" style="height:36px;width:auto;display:block" onerror="this.parentElement.innerHTML='Gv<span style=\'color:var(--accent)\'>//</span>'">
+    </a>
+    <div class="nav-links">
+      <a href="#prova">O resultado</a>
+      <a href="#para-quem">Para quem é</a>
+      <a href="#mecanismo">Como funciona</a>
+    </div>
+    <a href="#falar" class="btn btn-primary btn-sm nav-cta">Falar comigo</a>
+    <button class="menu-btn" onclick="toggleNav()">Menu</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid">
+
+      <div class="hero-content">
+        <div class="chip hero-tag" data-r>
+          <span class="chip-dot"></span>
+          Gestão de conteúdo · Case Arkano Club
+        </div>
+        <h1 class="h1 hero-title" data-r>
+          O conteúdo enche<br>o grupo. O grupo<br><span class="accent-text">vende.</span>
+        </h1>
+        <p class="hero-sub" data-r>
+          Eu cuido do conteúdo de quem vende produto caro por grupo fechado.
+          A Arkano Club vende relógios assim. Estes são os números dela depois que assumi o perfil.
+        </p>
+        <div class="hero-actions" data-r>
+          <a href="#falar" class="btn btn-primary">Quero esse resultado</a>
+          <a href="#prova" class="btn btn-ghost">Ver os números →</a>
+        </div>
+
+        <div class="placar" data-r>
+          <div>
+            <div class="placar-num">80</div>
+            <div class="placar-label">relógios vendidos<br>em julho</div>
+          </div>
+          <div>
+            <div class="placar-num">39</div>
+            <div class="placar-label">clientes novos<br>no mesmo mês</div>
+          </div>
+          <div>
+            <div class="placar-num accent-text">1,06 mi</div>
+            <div class="placar-label">de visualizações<br>no mesmo mês</div>
+          </div>
+          <p class="placar-fonte">
+            Vendas e clientes: o que o próprio dono da Arkano Club anunciou no grupo de clientes.
+            Visualizações: 1.061.024 em julho, o primeiro mês cheio de operação, direto do Instagram.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-r="fade">
+        <div class="mock-glow"></div>
+        <div class="mock-frame">
+          <picture>
+            <source media="(min-width:961px)" type="image/webp" srcset="banner-desktop.webp">
+            <source media="(min-width:961px)" srcset="banner-desktop.png">
+            <source type="image/webp" srcset="banner-mobile.webp">
+            <img src="banner-mobile.png" fetchpriority="high" decoding="async"
+                 alt="Carrosséis e feed do Instagram da Arkano Club produzidos por Gabriel Vicente">
+          </picture>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+
+<!-- ══ FAIXA EM LOOP ═════════════════════════════════════ -->
+<div class="faixa">
+  <div class="faixa-track">
+    <div class="faixa-lista">
+      <span>Relógios</span><i></i>
+      <span>Gestão de conteúdo</span><i></i>
+      <span>Joias e semijoias</span><i></i>
+      <span>Linha editorial</span><i></i>
+      <span>Sneakers</span><i></i>
+      <span>Do feed pro grupo</span><i></i>
+      <span>Importados sob encomenda</span><i></i>
+      <span>Estratégia de conteúdo</span><i></i>
+      <span>Eletrônicos de ticket alto</span><i></i>
+      <span>Venda por grupo fechado</span><i></i>
+    </div>
+    <div class="faixa-lista" aria-hidden="true">
+      <span>Relógios</span><i></i>
+      <span>Gestão de conteúdo</span><i></i>
+      <span>Joias e semijoias</span><i></i>
+      <span>Linha editorial</span><i></i>
+      <span>Sneakers</span><i></i>
+      <span>Do feed pro grupo</span><i></i>
+      <span>Importados sob encomenda</span><i></i>
+      <span>Estratégia de conteúdo</span><i></i>
+      <span>Eletrônicos de ticket alto</span><i></i>
+      <span>Venda por grupo fechado</span><i></i>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PROVA ═════════════════════════════════════════════ -->
+<section class="prova sec-light" id="prova">
+  <div class="container">
+
+    <div class="prova-header" data-r>
+      <p class="section-label">A prova</p>
+      <h2 class="h2">O dono anunciou o mês<br>no grupo dele.</h2>
+      <p>Não fui eu que contei o resultado. Foi o Guilherme, dono da Arkano Club, para os próprios clientes, no grupo onde as vendas acontecem.</p>
+    </div>
+
+    <div class="prova-inner sem-print">
+
+      <div class="prova-leitura">
+        <div class="leitura-item" data-r>
+          <div class="leitura-num">80</div>
+          <div class="leitura-title">Relógios vendidos em um mês</div>
+          <div class="leitura-text">Produto caro, vendido por conversa. Cada uma dessas vendas passou por uma pessoa que entrou no grupo e ficou.</div>
+        </div>
+        <div class="leitura-item" data-r>
+          <div class="leitura-num">39</div>
+          <div class="leitura-title">Clientes novos no mesmo mês</div>
+          <div class="leitura-text">Metade das vendas veio de gente que não conhecia a marca antes. É isso que o conteúdo faz: abastece o grupo de comprador novo.</div>
+        </div>
+        <div class="leitura-item" data-r>
+          <div class="leitura-num">julho</div>
+          <div class="leitura-title">O primeiro mês cheio de operação</div>
+          <div class="leitura-text">A primeira peça minha foi ao ar em 26/06/2026. Julho foi o primeiro mês inteiro rodando, e foi o mês que ele anunciou no grupo.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── gráficos ───────────────────────────────────── -->
+    <div class="ev-topo" data-r>
+      <div>
+        <p class="section-label">Evolução mês a mês</p>
+        <h3>O que aconteceu no perfil, mês por mês.</h3>
+      </div>
+      <div class="ev-legenda">
+        <span class="ev-key"><i class="ev-swatch sw-antes"></i>Antes de mim</span>
+        <span class="ev-key"><i class="ev-swatch sw-transicao"></i>Junho: só 5 dias comigo</span>
+        <span class="ev-key"><i class="ev-swatch sw-agora"></i>Mês cheio comigo</span>
+        <span class="ev-key"><i class="ev-swatch sw-parcial"></i>Setembro: só até o dia 12</span>
+      </div>
+    </div>
+
+    <div class="ev-grid">
+
+      <!-- ALCANCE -->
+      <figure class="ev-card" data-r>
+        <figcaption>
+          <div class="ev-title">Alcance</div>
+          <p class="ev-sub">Contas únicas que viram o perfil no mês</p>
+        </figcaption>
+        <div class="ev-plot">
+          <div class="ev-ticks"><span>500 mil</span><span>400 mil</span><span>300 mil</span><span>200 mil</span><span>100 mil</span><span>0</span></div>
+          <div class="ev-area">
+            <div class="ev-rules"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="ev-cols">
+              <div class="ev-col"><div class="ev-tip"><b>23</b><span>dez/2025</span></div><div class="ev-bar" style="height:0.5%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>5.875</b><span>jan/2026</span></div><div class="ev-bar" style="height:1.2%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>230.523</b><span>fev/2026</span></div><div class="ev-bar" style="height:46.1%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>198.402</b><span>mar/2026</span></div><div class="ev-bar" style="height:39.7%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>99.594</b><span>abr/2026</span></div><div class="ev-bar" style="height:19.9%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>175.193</b><span>mai/2026 · antes de mim</span></div><div class="ev-val" style="bottom:36.5%">175 mil</div><div class="ev-bar" style="height:35.0%"></div></div>
+              <div class="ev-col is-transicao"><div class="ev-tip"><b>255.137</b><span>jun/2026 · transição</span></div><div class="ev-bar" style="height:51.0%"></div></div>
+              <div class="ev-col is-agora"><div class="ev-tip"><b>367.597</b><span>jul/2026 · 1º mês cheio</span></div><div class="ev-val" style="bottom:75.0%">368 mil</div><div class="ev-bar" style="height:73.5%"></div></div>
+              <div class="ev-col is-agora"><div class="ev-tip"><b>471.700</b><span>ago/2026</span></div><div class="ev-val" style="bottom:95.8%">472 mil</div><div class="ev-bar" style="height:94.3%"></div></div>
+              <div class="ev-col is-parcial"><div class="ev-tip"><b>276.580</b><span>set/2026 · só até dia 12</span></div><div class="ev-bar" style="height:55.3%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ev-xs" aria-hidden="true">
+          <span>dez</span><span>jan</span><span>fev</span><span>mar</span><span>abr</span>
+          <span>mai</span><span>jun</span><span>jul</span><span>ago</span><span>set*</span>
+        </div>
+        <p class="ev-nota">Meses de 31 dias cobrem os dias 1 a 30: a Meta não deixa consultar mais de 30 dias de uma vez, e alcance não pode ser somado. Setembro vai só até o dia 12. O alcance inclui anúncios, e a Arkano roda tráfego pago que não é meu.</p>
+      </figure>
+
+      <!-- VISUALIZAÇÕES -->
+      <figure class="ev-card" data-r>
+        <figcaption>
+          <div class="ev-title">Visualizações</div>
+          <p class="ev-sub">Quantas vezes o conteúdo foi visto no mês</p>
+        </figcaption>
+        <div class="ev-plot">
+          <div class="ev-ticks"><span>1,2 mi</span><span>1 mi</span><span>800 mil</span><span>600 mil</span><span>400 mil</span><span>200 mil</span><span>0</span></div>
+          <div class="ev-area">
+            <div class="ev-rules"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="ev-cols">
+              <div class="ev-col"><div class="ev-tip"><b>899</b><span>dez/2025</span></div><div class="ev-bar" style="height:0.5%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>24.389</b><span>jan/2026</span></div><div class="ev-bar" style="height:2.0%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>463.395</b><span>fev/2026</span></div><div class="ev-bar" style="height:38.6%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>359.543</b><span>mar/2026</span></div><div class="ev-bar" style="height:30.0%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>182.549</b><span>abr/2026</span></div><div class="ev-bar" style="height:15.2%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>409.626</b><span>mai/2026 · antes de mim</span></div><div class="ev-val" style="bottom:35.6%">410 mil</div><div class="ev-bar" style="height:34.1%"></div></div>
+              <div class="ev-col is-transicao"><div class="ev-tip"><b>593.349</b><span>jun/2026 · transição</span></div><div class="ev-bar" style="height:49.4%"></div></div>
+              <div class="ev-col is-agora"><div class="ev-tip"><b>1.061.024</b><span>jul/2026 · 1º mês cheio</span></div><div class="ev-val" style="bottom:89.9%">1,06 mi</div><div class="ev-bar" style="height:88.4%"></div></div>
+              <div class="ev-col is-agora"><div class="ev-tip"><b>1.070.469</b><span>ago/2026</span></div><div class="ev-bar" style="height:89.2%"></div></div>
+              <div class="ev-col is-parcial"><div class="ev-tip"><b>535.176</b><span>set/2026 · só até dia 12</span></div><div class="ev-bar" style="height:44.6%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ev-xs" aria-hidden="true">
+          <span>dez</span><span>jan</span><span>fev</span><span>mar</span><span>abr</span>
+          <span>mai</span><span>jun</span><span>jul</span><span>ago</span><span>set*</span>
+        </div>
+        <p class="ev-nota">De 409.626 em maio, o último mês antes de mim, para 1.061.024 em julho, o primeiro mês cheio: 159% a mais. Setembro vai só até o dia 12.</p>
+      </figure>
+
+      <!-- POSTS -->
+      <figure class="ev-card" data-r>
+        <figcaption>
+          <div class="ev-title">Publicações no feed</div>
+          <p class="ev-sub">Carrossel, post único e Reels. Stories não entram</p>
+        </figcaption>
+        <div class="ev-plot">
+          <div class="ev-ticks"><span>30</span><span>20</span><span>10</span><span>0</span></div>
+          <div class="ev-area">
+            <div class="ev-rules"><i></i><i></i><i></i><i></i></div>
+            <div class="ev-cols">
+              <div class="ev-col"><div class="ev-tip"><b>7 posts</b><span>dez/2025</span></div><div class="ev-bar" style="height:23.3%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>7 posts</b><span>jan/2026</span></div><div class="ev-bar" style="height:23.3%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>8 posts</b><span>fev/2026</span></div><div class="ev-bar" style="height:26.7%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>6 posts</b><span>mar/2026</span></div><div class="ev-bar" style="height:20.0%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>2 posts</b><span>abr/2026</span></div><div class="ev-bar" style="height:6.7%"></div></div>
+              <div class="ev-col"><div class="ev-tip"><b>8 posts</b><span>mai/2026 · antes de mim</span></div><div class="ev-val" style="bottom:28.2%">8</div><div class="ev-bar" style="height:26.7%"></div></div>
+              <div class="ev-col is-transicao"><div class="ev-tip"><b>2 posts</b><span>jun/2026 · transição</span></div><div class="ev-bar" style="height:6.7%"></div></div>
+              <div class="ev-col is-agora"><div class="ev-tip"><b>29 posts</b><span>jul/2026 · 1º mês cheio</span></div><div class="ev-val" style="bottom:98.2%">29</div><div class="ev-bar" style="height:96.7%"></div></div>
+              <div class="ev-col is-agora"><div class="ev-tip"><b>30 posts</b><span>ago/2026</span></div><div class="ev-bar" style="height:100%"></div></div>
+              <div class="ev-col is-parcial"><div class="ev-tip"><b>14 posts</b><span>set/2026 · só até dia 12</span></div><div class="ev-bar" style="height:46.7%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ev-xs" aria-hidden="true">
+          <span>dez</span><span>jan</span><span>fev</span><span>mar</span><span>abr</span>
+          <span>mai</span><span>jun</span><span>jul</span><span>ago</span><span>set*</span>
+        </div>
+        <p class="ev-nota">O perfil saiu de 8 publicações no último mês antes de mim para 29 e 30 nos dois meses seguintes. Constância é mecanismo, não volume por volume.</p>
+      </figure>
+
+      <!-- FORMATO -->
+      <figure class="ev-card" data-r>
+        <figcaption>
+          <div class="ev-title">O formato que puxa</div>
+          <p class="ev-sub">Alcance médio por carrossel publicado</p>
+        </figcaption>
+        <div class="ev-plot">
+          <div class="ev-ticks"><span>25 mil</span><span>20 mil</span><span>15 mil</span><span>10 mil</span><span>5 mil</span><span>0</span></div>
+          <div class="ev-area">
+            <div class="ev-rules"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="ev-cols" style="gap:10px">
+              <div class="ev-col"><div class="ev-tip"><b>8.254</b><span>mai/2026 · 7 carrosséis</span></div><div class="ev-val" style="bottom:35.0%">8.254</div><div class="ev-bar" style="max-width:52px;height:33.0%"></div></div>
+              <div class="ev-col is-agora"><div class="ev-tip"><b>11.455</b><span>jul/2026 · 27 carrosséis</span></div><div class="ev-val" style="bottom:47.8%">11.455</div><div class="ev-bar" style="max-width:52px;height:45.8%"></div></div>
+              <div class="ev-col is-agora"><div class="ev-tip"><b>18.300</b><span>ago/2026 · 30 carrosséis</span></div><div class="ev-val" style="bottom:75.2%">18.300</div><div class="ev-bar" style="max-width:52px;height:73.2%"></div></div>
+              <div class="ev-col is-parcial"><div class="ev-tip"><b>20.458</b><span>set/2026 · 12 carrosséis até dia 12</span></div><div class="ev-val" style="bottom:83.8%">20.458</div><div class="ev-bar" style="max-width:52px;height:81.8%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ev-xs" aria-hidden="true" style="gap:10px">
+          <span>mai</span><span>jul</span><span>ago</span><span>set*</span>
+        </div>
+        <p class="ev-nota">Cada carrossel publicado hoje alcança mais que os de antes, mesmo com o perfil publicando quase quatro vezes mais. Junho ficou fora: teve um carrossel só no mês, amostra pequena demais para significar alguma coisa.</p>
+      </figure>
+
+      <!-- SEGUIDORES -->
+      <figure class="ev-card ev-card--linha" data-r>
+        <figcaption>
+          <div class="ev-title">Seguidores</div>
+          <p class="ev-sub">Cinco leituras reais do total da conta. O Instagram não guarda o histórico, então só existe o que foi anotado na data.</p>
+        </figcaption>
+        <div class="ev-line-wrap">
+          <svg class="svg-desk" viewBox="0 0 740 272" role="img" aria-label="Total de seguidores da Arkano Club: 8.570 em 28 de julho, 9.162 em 1 de agosto, 9.865 em 12 de agosto, 11.301 em 1 de setembro e 12.662 em 13 de setembro de 2026.">
+            <!-- gridlines -->
+            <g class="svg-rule" stroke-width="1">
+              <line x1="60" y1="30" x2="700" y2="30"/>
+              <line x1="60" y1="70" x2="700" y2="70"/>
+              <line x1="60" y1="110" x2="700" y2="110"/>
+              <line x1="60" y1="150" x2="700" y2="150"/>
+              <line x1="60" y1="190" x2="700" y2="190"/>
+              <line x1="60" y1="230" x2="700" y2="230"/>
+            </g>
+            <!-- y ticks -->
+            <g class="svg-tick" font-size="11" font-family="'Plus Jakarta Sans',sans-serif" text-anchor="end">
+              <text x="50" y="34">13.000</text>
+              <text x="50" y="74">12.000</text>
+              <text x="50" y="114">11.000</text>
+              <text x="50" y="154">10.000</text>
+              <text x="50" y="194">9.000</text>
+              <text x="50" y="234">8.000</text>
+            </g>
+            <!-- área -->
+            <path d="M60,207.2 L114.5,183.5 L264.3,155.4 L536.6,98 L700,43.5 L700,230 L60,230 Z"
+                  fill="#bd4905" fill-opacity="0.1"/>
+            <!-- linha -->
+            <path d="M60,207.2 L114.5,183.5 L264.3,155.4 L536.6,98 L700,43.5"
+                  fill="none" stroke="#bd4905" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- pontos com anel de superfície -->
+            <g>
+              <circle cx="60" cy="207.2" r="4" fill="#bd4905" stroke-width="2"/>
+              <circle cx="114.5" cy="183.5" r="4" fill="#bd4905" stroke-width="2"/>
+              <circle cx="264.3" cy="155.4" r="4" fill="#bd4905" stroke-width="2"/>
+              <circle cx="536.6" cy="98" r="4" fill="#bd4905" stroke-width="2"/>
+              <circle cx="700" cy="43.5" r="5" fill="#bd4905" stroke-width="2"/>
+            </g>
+            <!-- rótulos diretos -->
+            <g class="svg-lbl" font-size="12" font-weight="700" font-family="'Plus Jakarta Sans',sans-serif">
+              <text x="60" y="224" text-anchor="start">8.570</text>
+              <text x="126" y="172" text-anchor="start">9.162</text>
+              <text x="536.6" y="86" text-anchor="middle">11.301</text>
+              <text x="700" y="32" text-anchor="end">12.662</text>
+            </g>
+            <!-- x labels -->
+            <g class="svg-tick" font-size="11" font-family="'Plus Jakarta Sans',sans-serif" text-anchor="middle">
+              <text x="60" y="252">28/07</text>
+              <text x="126" y="252">01/08</text>
+              <text x="264.3" y="252">12/08</text>
+              <text x="536.6" y="252">01/09</text>
+              <text x="700" y="252">13/09</text>
+            </g>
+            <!-- alvos de hover -->
+            <g class="ev-line-hit">
+              <rect x="36" y="20" width="56" height="220"><title>28/07/2026 · 8.570 seguidores</title></rect>
+              <rect x="92" y="20" width="76" height="220"><title>01/08/2026 · 9.162 seguidores</title></rect>
+              <rect x="200" y="20" width="128" height="220"><title>12/08/2026 · 9.865 seguidores</title></rect>
+              <rect x="440" y="20" width="152" height="220"><title>01/09/2026 · 11.301 seguidores</title></rect>
+              <rect x="640" y="20" width="76" height="220"><title>13/09/2026 · 12.662 seguidores</title></rect>
+            </g>
+          </svg>
+
+          <!-- versão estreita -->
+          <svg class="svg-mob" viewBox="0 0 380 300" role="img" aria-label="Total de seguidores da Arkano Club: 8.570 em 28 de julho, 9.162 em 1 de agosto, 9.865 em 12 de agosto, 11.301 em 1 de setembro e 12.662 em 13 de setembro de 2026.">
+            <g class="svg-rule" stroke-width="1">
+              <line x1="52" y1="24" x2="370" y2="24"/>
+              <line x1="52" y1="69.2" x2="370" y2="69.2"/>
+              <line x1="52" y1="114.4" x2="370" y2="114.4"/>
+              <line x1="52" y1="159.6" x2="370" y2="159.6"/>
+              <line x1="52" y1="204.8" x2="370" y2="204.8"/>
+              <line x1="52" y1="250" x2="370" y2="250"/>
+            </g>
+            <g class="svg-tick" font-size="13" font-family="'Plus Jakarta Sans',sans-serif" text-anchor="end">
+              <text x="44" y="28">13.000</text>
+              <text x="44" y="73">12.000</text>
+              <text x="44" y="118">11.000</text>
+              <text x="44" y="164">10.000</text>
+              <text x="44" y="209">9.000</text>
+              <text x="44" y="254">8.000</text>
+            </g>
+            <path d="M52,224.2 L79.1,197.5 L153.5,165.7 L288.8,100.8 L370,39.3 L370,250 L52,250 Z"
+                  fill="#bd4905" fill-opacity="0.1"/>
+            <path d="M52,224.2 L79.1,197.5 L153.5,165.7 L288.8,100.8 L370,39.3"
+                  fill="none" stroke="#bd4905" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <g>
+              <circle cx="52" cy="224.2" r="4.5" fill="#bd4905" stroke-width="2"/>
+              <circle cx="79.1" cy="197.5" r="4.5" fill="#bd4905" stroke-width="2"/>
+              <circle cx="153.5" cy="165.7" r="4.5" fill="#bd4905" stroke-width="2"/>
+              <circle cx="288.8" cy="100.8" r="4.5" fill="#bd4905" stroke-width="2"/>
+              <circle cx="370" cy="39.3" r="5.5" fill="#bd4905" stroke-width="2"/>
+            </g>
+            <g class="svg-lbl" font-size="13" font-weight="700" font-family="'Plus Jakarta Sans',sans-serif">
+              <text x="52" y="214" text-anchor="start">8.570</text>
+              <text x="86" y="188" text-anchor="start">9.162</text>
+              <text x="288.8" y="90" text-anchor="middle">11.301</text>
+              <text x="370" y="29" text-anchor="end">12.662</text>
+            </g>
+            <g class="svg-tick" font-size="12" font-family="'Plus Jakarta Sans',sans-serif" text-anchor="middle">
+              <text x="52" y="272">28/07</text>
+              <text x="153.5" y="272">12/08</text>
+              <text x="288.8" y="272">01/09</text>
+              <text x="379" y="272" text-anchor="end">13/09</text>
+            </g>
+            <g class="ev-line-hit">
+              <rect x="34" y="16" width="34" height="238"><title>28/07/2026 · 8.570 seguidores</title></rect>
+              <rect x="68" y="16" width="48" height="238"><title>01/08/2026 · 9.162 seguidores</title></rect>
+              <rect x="116" y="16" width="105" height="238"><title>12/08/2026 · 9.865 seguidores</title></rect>
+              <rect x="221" y="16" width="108" height="238"><title>01/09/2026 · 11.301 seguidores</title></rect>
+              <rect x="329" y="16" width="45" height="238"><title>13/09/2026 · 12.662 seguidores</title></rect>
+            </g>
+          </svg>
+        </div>
+        <p class="ev-nota">Agosto é o único mês com leitura real nas duas pontas: 9.162 em 01/08 e 11.301 em 01/09, ou seja 2.139 seguidores no mês, 23,3% a mais. O ponto de 13/09 é a leitura mais recente da conta.</p>
+      </figure>
+
+    </div>
+
+    <!-- tabela de apoio -->
+    <details class="ev-tabela" data-r>
+      <summary>Ver a tabela com todos os meses</summary>
+      <div class="ev-scroll">
+        <table>
+          <thead>
+            <tr><th>Mês</th><th>Alcance</th><th>Visualizações</th><th>Posts no feed</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>dez/2025</td><td>23</td><td>899</td><td>7</td></tr>
+            <tr><td>jan/2026</td><td>5.875</td><td>24.389</td><td>7</td></tr>
+            <tr><td>fev/2026</td><td>230.523</td><td>463.395</td><td>8</td></tr>
+            <tr><td>mar/2026</td><td>198.402</td><td>359.543</td><td>6</td></tr>
+            <tr><td>abr/2026</td><td>99.594</td><td>182.549</td><td>2</td></tr>
+            <tr class="marcado"><td>mai/2026 · antes de mim</td><td>175.193</td><td>409.626</td><td>8</td></tr>
+            <tr><td>jun/2026 · transição</td><td>255.137</td><td>593.349</td><td>2</td></tr>
+            <tr class="marcado"><td>jul/2026 · 1º mês cheio</td><td>367.597</td><td>1.061.024</td><td>29</td></tr>
+            <tr><td>ago/2026</td><td>471.700</td><td>1.070.469</td><td>30</td></tr>
+            <tr><td>set/2026 · até dia 12</td><td>276.580</td><td>535.176</td><td>14</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <p class="fonte-bloco" data-r>
+      <b>De onde vêm estes números.</b>
+      Alcance, visualizações e publicações saíram da API oficial do Instagram para a conta @arkano.club,
+      levantados em 13/09/2026, cobrindo de dezembro de 2025 a 12 de setembro de 2026.
+      Os totais de seguidores são leituras anotadas nas datas que aparecem no gráfico, porque o Instagram
+      não devolve histórico dessa métrica. Vendas e clientes novos são o que o próprio dono publicou no grupo.
+      Nenhum número desta página foi estimado ou deduzido. Os rótulos em cima das barras aparecem
+      encurtados para caber: o valor cheio está na tabela acima e ao passar o mouse na barra.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ══ PARA QUEM É ═══════════════════════════════════════ -->
+<section class="publico" id="para-quem">
+  <div class="container">
+
+    <div class="publico-header" data-r>
+      <p class="section-label">Para quem é</p>
+      <h2 class="h2">Eu trabalho com um tipo<br>de negócio só.</h2>
+      <p>Quem vende produto caro por grupo fechado ou por encomenda. O conteúdo não fecha a venda sozinho: ele leva a pessoa certa para dentro do grupo, e a venda acontece na conversa.</p>
+    </div>
+
+    <div class="publico-grid" data-r>
+      <div class="publico-col">
+        <div class="publico-col-title">É o seu caso</div>
+        <p class="publico-col-sub">Ticket alto, venda por conversa, grupo ou encomenda.</p>
+        <ul class="publico-list">
+          <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
+            <div>Relógios<br><span>originais, peças de coleção, importação própria</span></div></li>
+          <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
+            <div>Joias e semijoias<br><span>peça a peça, venda por catálogo</span></div></li>
+          <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
+            <div>Sneakers<br><span>lançamento, hype, numeração limitada</span></div></li>
+          <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
+            <div>Importados sob encomenda<br><span>compra no exterior, prazo, rastreio</span></div></li>
+          <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
+            <div>Eletrônicos de ticket alto<br><span>iPhone, linha Apple, setup</span></div></li>
+        </ul>
+      </div>
+
+      <div class="publico-col">
+        <div class="publico-col-title">Não é o seu caso</div>
+        <p class="publico-col-sub">Não atendo, e prefiro dizer agora.</p>
+        <ul class="publico-list">
+          <li><i class="mark mark-nao"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="3.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></i>
+            <div>Mentoria<br><span>individual ou em grupo</span></div></li>
+          <li><i class="mark mark-nao"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="3.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></i>
+            <div>Curso<br><span>gravado ou ao vivo</span></div></li>
+          <li><i class="mark mark-nao"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="3.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></i>
+            <div>Infoproduto em geral<br><span>ebook, comunidade paga, lançamento</span></div></li>
+        </ul>
+        <p class="publico-nota">
+          Não é julgamento de mercado. <b>É que o meu mecanismo depende de um produto físico, caro, com um grupo ou uma lista do outro lado.</b> Fora disso eu não tenho como repetir o que fiz na Arkano.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ COMO FUNCIONA ═════════════════════════════════════ -->
+<section class="mecanismo sec-orange" id="mecanismo">
+  <div class="container">
+
+    <div class="mecanismo-header" data-r>
+      <p class="section-label">Como funciona</p>
+      <h2 class="promessa">O feed atrai.<br>O grupo fecha.</h2>
+      <p class="mecanismo-sub">Quatro peças, e é só isso. O conteúdo existe para colocar comprador dentro do grupo e deixar ele pronto para comprar antes de você falar qualquer coisa.</p>
+    </div>
+
+    <div class="mec-grid" data-r>
+      <div class="mec-item">
+        <div class="mec-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div>
+          <div class="mec-step">01</div>
+          <div class="mec-title">Falo com quem compra, não com quem curte</div>
+          <div class="mec-text">O conteúdo é feito para o perfil de quem já paga caro no seu produto. Audiência grande sem poder de compra não serve, e eu não persigo esse número.</div>
+        </div>
+      </div>
+      <div class="mec-item">
+        <div class="mec-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v5h5"/><path d="M8.5 13h7"/><path d="M8.5 16.5h4"/></svg></div>
+        <div>
+          <div class="mec-step">02</div>
+          <div class="mec-title">A peça educa antes de vender</div>
+          <div class="mec-text">Quem entende o produto pergunta preço, não pergunta se é original. O conteúdo tira a objeção antes de ela chegar na sua conversa, e o atendimento fica mais curto.</div>
+        </div>
+      </div>
+      <div class="mec-item">
+        <div class="mec-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+        <div>
+          <div class="mec-step">03</div>
+          <div class="mec-title">A chamada para o grupo entra na peça certa</div>
+          <div class="mec-text">Nem todo post puxa para o grupo. A maior parte existe para trazer gente e ganhar confiança. O convite entra quando a pessoa já está pronta, porque convite em todo post vira ruído e para de funcionar.</div>
+        </div>
+      </div>
+      <div class="mec-item">
+        <div class="mec-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17s1.5-6 9-6 9 6 9 6"/><circle cx="12" cy="6" r="3"/></svg></div>
+        <div>
+          <div class="mec-step">04</div>
+          <div class="mec-title">O grupo recebe gente nova toda semana</div>
+          <div class="mec-text">Foi o que aconteceu na Arkano: o grupo parou de depender de indicação para crescer. Com fluxo constante entrando, a venda volta a ser conversa, não sorte.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ═════════════════════════════════════════ -->
+<section class="cta-final" id="falar">
+  <div class="cta-glow"></div>
+  <div class="container">
+    <div class="cta-box" data-r>
+      <p class="section-label" style="margin-bottom:20px">Vamos conversar</p>
+      <h2 class="h2" style="margin-bottom:18px">
+        Me conta o que você vende<br>e para quem <span class="accent-text">você vende.</span>
+      </h2>
+      <p>Eu te digo na conversa se o seu caso se parece com o da Arkano ou não. Se não se parecer, eu falo.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/5511993734567?text=Ol%C3%A1%20Gabriel%2C%20vim%20pela%20p%C3%A1gina%20de%20gest%C3%A3o%20de%20conte%C3%BAdo.%20Eu%20vendo%20produto%20de%20ticket%20alto%20por%20grupo%20fechado%20e%20quero%20saber%20como%20funciona." class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.117 1.522 5.847L.057 24l6.304-1.654A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.214-3.727.977.998-3.635-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+          Falar sobre gestão de conteúdo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="https://gvdesiigner.com.br" class="logo">
+        <img src="identidade/logopng02=white.png" alt="Gabriel Vicente" style="height:28px;width:auto;display:block" onerror="this.parentElement.innerHTML='Gv<span style=\'color:var(--accent)\'>//</span>'">
+      </a>
+      <div>
+        <p class="footer-copy">© 2026 Gabriel Vicente · Design + Estratégia + Resultado.</p>
+        <p class="footer-copy" style="margin-top:4px">CNPJ 45.613.386/0001-45</p>
+      </div>
+      <div class="footer-links">
+        <a href="#prova">O resultado</a>
+        <a href="#para-quem">Para quem é</a>
+        <a href="#falar">Contato</a>
+        <a href="https://www.instagram.com/gvdesiigner/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FAB WHATSAPP ════════════════════════════════════════ -->
+<a href="https://wa.me/5511993734567?text=Ol%C3%A1%20Gabriel%2C%20vim%20pela%20p%C3%A1gina%20de%20gest%C3%A3o%20de%20conte%C3%BAdo.%20Eu%20vendo%20produto%20de%20ticket%20alto%20por%20grupo%20fechado%20e%20quero%20saber%20como%20funciona." class="fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.117 1.522 5.847L.057 24l6.304-1.654A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.214-3.727.977.998-3.635-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
+</a>
+
+<!-- ══ JS ══════════════════════════════════════════════════ -->
+<script>
+// Loader
+(function(){
+  const loader = document.getElementById('loader');
+  const bar = document.getElementById('loader-bar');
+  const pct = document.getElementById('loader-pct');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => { bar.style.width = '100%'; });
+  const duration = 1800;
+  const t0 = performance.now();
+  function tick(now) {
+    const p = Math.min(Math.round((now - t0) / duration * 100), 100);
+    pct.textContent = p + '%';
+    if (p < 100) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  setTimeout(() => {
+    loader.style.opacity = '0';
+    setTimeout(() => { loader.remove(); document.body.style.overflow = ''; }, 400);
+  }, 2000);
+})();
+
+// Scroll suave (easing no wheel), desativado em touch e em "menos movimento"
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  let current = window.scrollY;
+  let target = window.scrollY;
+  let raf = null;
+
+  function maxScroll() {
+    return document.documentElement.scrollHeight - window.innerHeight;
+  }
+
+  function step() {
+    current += (target - current) * 0.12;
+    if (Math.abs(target - current) < 0.5) current = target;
+    window.scrollTo(0, current);
+    raf = current === target ? null : requestAnimationFrame(step);
+  }
+
+  window.addEventListener('wheel', (e) => {
+    target = Math.max(0, Math.min(maxScroll(), target + e.deltaY));
+    e.preventDefault();
+    if (!raf) raf = requestAnimationFrame(step);
+  }, { passive: false });
+
+  window.addEventListener('resize', () => {
+    target = Math.min(target, maxScroll());
+  });
+})();
+
+// Nav scroll + parallax no brilho do mockup
+const nav = document.getElementById('nav');
+const _mockGlow = document.querySelector('.mock-glow');
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 40);
+  if (_mockGlow) _mockGlow.style.transform = `translate(-50%,-50%) translateY(${y * 0.06}px)`;
+}, {passive:true});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const siblings = [...e.target.parentElement.querySelectorAll('[data-r]')];
+    const idx = siblings.indexOf(e.target);
+    setTimeout(() => e.target.classList.add('on'), idx * 90);
+    observer.unobserve(e.target);
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('[data-r]').forEach(el => observer.observe(el));
+
+// Mobile nav
+function toggleNav() {
+  const links = document.querySelector('.nav-links');
+  const open = links.dataset.open === '1';
+  if (open) {
+    links.removeAttribute('style');
+    links.dataset.open = '0';
+  } else {
+    Object.assign(links.style, {
+      display:'flex', flexDirection:'column', position:'absolute',
+      top:'68px', left:'0', right:'0', background:'rgba(10,10,10,.96)',
+      backdropFilter:'blur(20px)', padding:'24px', gap:'20px',
+      borderBottom:'1px solid rgba(255,255,255,.07)', zIndex:'99'
+    });
+    links.dataset.open = '1';
+  }
+}
+</script>
+</body>
+</html>
