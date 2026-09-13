@@ -27,12 +27,26 @@ O WebP é o que praticamente todo mundo baixa; o PNG é reserva para navegador a
 
 ## Endereço e preview do link
 
-Hoje o site vive em **https://gvdesiigner-conteudo.vercel.app**, e o `canonical`,
-o `og:url` e o `og:image` no `<head>` do `index.html` apontam para lá.
+A página tem dois endereços de propósito:
 
-Ao trocar de endereço, trocar os três junto. O `og:image` precisa ser URL absoluta
-e precisa responder 200: se apontar para um domínio que não resolve, o preview do
-link no WhatsApp e no Instagram sai sem imagem.
+- **https://gvdesiigner.com.br/conteudo** é o endereço bom. O projeto `gvdesiigner`
+  tem um rewrite no `vercel.json` dele que serve este deploy nesse caminho. O código
+  e o deploy continuam aqui; lá só passa o roteamento.
+- **https://gvdesiigner-conteudo.vercel.app** é o deploy direto, que o rewrite
+  consome. Funciona sozinho, mas é espelho.
+
+Por isso o `canonical` e o `og:url` apontam para o domínio próprio, e um script no
+`<head>` injeta `noindex, nofollow` quando o host é `.vercel.app`, para o espelho
+não competir com o endereço bom no Google. O script decide pelo host que aparece
+na barra do visitante, que através do rewrite continua sendo o domínio próprio.
+
+**Os caminhos das imagens são absolutos de propósito.** Em `/conteudo`, sem barra
+no final, caminho relativo resolve contra a raiz do domínio e quebra. Absoluto
+funciona em `/conteudo`, em `/conteudo/` e no `.vercel.app`, sem redirecionamento.
+
+O `og:image` fica no `.vercel.app` porque precisa responder 200 hoje: se apontar
+para um domínio que ainda não resolve, o preview do link no WhatsApp e no
+Instagram sai sem imagem.
 
 ## O print do dono da Arkano Club
 

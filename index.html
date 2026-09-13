@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestão de conteúdo para quem vende por grupo fechado · Gabriel Vicente</title>
   <meta name="description" content="Eu faço o conteúdo que leva comprador para o seu grupo fechado. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
-  <link rel="icon" type="image/png" href="identidade/simbolos.png">
-  <link rel="canonical" href="https://gvdesiigner-conteudo.vercel.app">
+  <link rel="icon" type="image/png" href="https://gvdesiigner-conteudo.vercel.app/identidade/simbolos.png">
+  <link rel="canonical" href="https://gvdesiigner.com.br/conteudo">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Gestão de conteúdo para quem vende por grupo fechado">
   <meta property="og:description" content="O conteúdo enche o grupo. O grupo vende. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
   <meta property="og:image" content="https://gvdesiigner-conteudo.vercel.app/og-conteudo.png">
-  <meta property="og:url" content="https://gvdesiigner-conteudo.vercel.app">
+  <meta property="og:url" content="https://gvdesiigner.com.br/conteudo">
   <meta property="og:locale" content="pt_BR">
 
   <!-- Twitter/X -->
@@ -21,6 +21,18 @@
   <meta name="twitter:title" content="Gestão de conteúdo para quem vende por grupo fechado">
   <meta name="twitter:description" content="O conteúdo enche o grupo. O grupo vende. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
   <meta name="twitter:image" content="https://gvdesiigner-conteudo.vercel.app/og-conteudo.png">
+
+  <script>
+    // A cópia em .vercel.app é espelho. O endereço bom é gvdesiigner.com.br/conteudo,
+    // então só o espelho sai do índice. Vale pelo host que o visitante vê na barra,
+    // que através do rewrite continua sendo o domínio próprio.
+    if (location.hostname.endsWith('.vercel.app')) {
+      var r = document.createElement('meta');
+      r.name = 'robots';
+      r.content = 'noindex, nofollow';
+      document.head.appendChild(r);
+    }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -576,7 +588,7 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
 <!-- ══ LOADER ═════════════════════════════════════════════ -->
 <div id="loader">
   <div id="loader-logo">
-    <img src="identidade/logopng02=white.png" alt="Gabriel Vicente" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-size:22px;font-weight:800;letter-spacing:-.02em;color:#fff\'>Gvdesiigner</span>')">
+    <img src="https://gvdesiigner-conteudo.vercel.app/identidade/logopng02=white.png" alt="Gabriel Vicente" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-size:22px;font-weight:800;letter-spacing:-.02em;color:#fff\'>Gvdesiigner</span>')">
   </div>
   <div>
     <div id="loader-track"><div id="loader-bar"></div></div>
@@ -588,7 +600,7 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
 <nav class="nav" id="nav">
   <div class="nav-inner container">
     <a href="https://gvdesiigner.com.br" class="logo" id="logo-nav">
-      <img src="identidade/logopng02=white.png" alt="Gabriel Vicente" style="height:36px;width:auto;display:block" onerror="this.parentElement.innerHTML='Gv<span style=\'color:var(--accent)\'>//</span>'">
+      <img src="https://gvdesiigner-conteudo.vercel.app/identidade/logopng02=white.png" alt="Gabriel Vicente" style="height:36px;width:auto;display:block" onerror="this.parentElement.innerHTML='Gv<span style=\'color:var(--accent)\'>//</span>'">
     </a>
     <div class="nav-links">
       <a href="#prova">O resultado</a>
@@ -645,10 +657,10 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
         <div class="mock-glow"></div>
         <div class="mock-frame">
           <picture>
-            <source media="(min-width:961px)" type="image/webp" srcset="banner-desktop.webp">
-            <source media="(min-width:961px)" srcset="banner-desktop.png">
-            <source type="image/webp" srcset="banner-mobile.webp">
-            <img src="banner-mobile.png" fetchpriority="high" decoding="async"
+            <source media="(min-width:961px)" type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/banner-desktop.webp">
+            <source media="(min-width:961px)" srcset="https://gvdesiigner-conteudo.vercel.app/banner-desktop.png">
+            <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/banner-mobile.webp">
+            <img src="https://gvdesiigner-conteudo.vercel.app/banner-mobile.png" fetchpriority="high" decoding="async"
                  alt="Carrosséis e feed do Instagram da Arkano Club produzidos por Gabriel Vicente">
           </picture>
         </div>
@@ -1131,7 +1143,7 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
   <div class="container">
     <div class="footer-inner">
       <a href="https://gvdesiigner.com.br" class="logo">
-        <img src="identidade/logopng02=white.png" alt="Gabriel Vicente" style="height:28px;width:auto;display:block" onerror="this.parentElement.innerHTML='Gv<span style=\'color:var(--accent)\'>//</span>'">
+        <img src="https://gvdesiigner-conteudo.vercel.app/identidade/logopng02=white.png" alt="Gabriel Vicente" style="height:28px;width:auto;display:block" onerror="this.parentElement.innerHTML='Gv<span style=\'color:var(--accent)\'>//</span>'">
       </a>
       <div>
         <p class="footer-copy">© 2026 Gabriel Vicente · Design + Estratégia + Resultado.</p>
