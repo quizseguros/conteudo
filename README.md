@@ -25,12 +25,14 @@ Qualquer host de estático serve. A raiz do repositório já é a raiz do site.
 
 O WebP é o que praticamente todo mundo baixa; o PNG é reserva para navegador antigo.
 
-## Antes de apontar um domínio
+## Endereço e preview do link
 
-Três endereços estão fixos no `<head>` do `index.html` apontando para
-`https://gvdesiigner.com.br/conteudo`: o `canonical`, o `og:url` e o `og:image`.
-Se o endereço final for outro, trocar os três. O `og:image` precisa ser URL
-absoluta, senão o preview do link não aparece.
+Hoje o site vive em **https://gvdesiigner-conteudo.vercel.app**, e o `canonical`,
+o `og:url` e o `og:image` no `<head>` do `index.html` apontam para lá.
+
+Ao trocar de endereço, trocar os três junto. O `og:image` precisa ser URL absoluta
+e precisa responder 200: se apontar para um domínio que não resolve, o preview do
+link no WhatsApp e no Instagram sai sem imagem.
 
 ## O print do dono da Arkano Club
 
