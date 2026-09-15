@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestão de conteúdo para quem vende por grupo fechado · Gabriel Vicente</title>
-  <meta name="description" content="Eu faço o conteúdo que leva comprador para o seu grupo fechado. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
+  <meta name="description" content="Eu construo e opero o conteúdo de negócios que vendem produtos caros por grupo fechado ou encomenda. Na Arkano Club, o primeiro mês cheio teve 80 relógios vendidos para 39 clientes.">
   <link rel="icon" type="image/png" href="https://gvdesiigner-conteudo.vercel.app/identidade/simbolos.png">
   <link rel="canonical" href="https://gvdesiigner.com.br/conteudo">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Gestão de conteúdo para quem vende por grupo fechado">
-  <meta property="og:description" content="O conteúdo enche o grupo. O grupo vende. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
+  <meta property="og:description" content="O conteúdo enche o grupo. O grupo vende. Na Arkano Club, o primeiro mês cheio da operação teve 80 relógios vendidos para 39 clientes.">
   <meta property="og:image" content="https://gvdesiigner-conteudo.vercel.app/og-conteudo.png">
   <meta property="og:url" content="https://gvdesiigner.com.br/conteudo">
   <meta property="og:locale" content="pt_BR">
@@ -19,7 +19,7 @@
   <!-- Twitter/X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gestão de conteúdo para quem vende por grupo fechado">
-  <meta name="twitter:description" content="O conteúdo enche o grupo. O grupo vende. Na Arkano Club, julho fechou com 80 relógios vendidos e 39 clientes novos.">
+  <meta name="twitter:description" content="O conteúdo enche o grupo. O grupo vende. Na Arkano Club, o primeiro mês cheio da operação teve 80 relógios vendidos para 39 clientes.">
   <meta name="twitter:image" content="https://gvdesiigner-conteudo.vercel.app/og-conteudo.png">
 
   <script>
@@ -177,11 +177,12 @@ nav,section,footer,.fab{position:relative;z-index:1}
 .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:40px}
 
 /* placar do herói */
-.placar{display:grid;grid-template-columns:repeat(3,auto);gap:clamp(18px,3vw,34px);
+.placar{display:grid;grid-template-columns:repeat(2,auto);gap:clamp(16px,2.4vw,26px) clamp(18px,3vw,32px);
   padding-top:28px;border-top:1px solid var(--border)}
-.placar-num{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.045em;line-height:1}
+.placar-num{font-size:clamp(1.5rem,2.6vw,2rem);white-space:nowrap;font-weight:800;letter-spacing:-.045em;line-height:1}
 .placar-label{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.45}
-.placar-fonte{font-size:11px;color:var(--faint);margin-top:18px;line-height:1.55;grid-column:1/-1}
+.placar-fonte{font-size:11px;color:var(--faint);margin-top:14px;line-height:1.6;grid-column:1/-1;max-width:520px}
+.placar-fonte b{color:var(--muted);font-weight:700}
 
 /* visual do herói */
 .hero-visual{position:relative}
@@ -227,6 +228,12 @@ nav,section,footer,.fab{position:relative;z-index:1}
 .print-legenda b{color:var(--strong);font-weight:600}
 
 .prova-leitura{display:flex;flex-direction:column;gap:14px}
+.atribuicao{margin-top:clamp(18px,2.4vw,24px);padding:clamp(20px,2.6vw,28px);
+  border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:14px;
+  background:var(--surface)}
+.atribuicao p{font-size:14px;line-height:1.7;color:var(--muted);font-weight:500}
+.atribuicao p + p{margin-top:12px}
+.atribuicao b{color:var(--text);font-weight:800}
 /* enquanto o print está fora, os três cards ocupam a largura toda */
 .prova-inner.sem-print{grid-template-columns:1fr}
 .prova-inner.sem-print .prova-leitura{display:grid;grid-template-columns:repeat(3,1fr);
@@ -249,6 +256,7 @@ nav,section,footer,.fab{position:relative;z-index:1}
   flex-wrap:wrap;margin-bottom:26px}
 .ev-topo .section-label{margin-bottom:8px}
 .ev-topo h3{font-size:clamp(1.3rem,2.2vw,1.75rem);font-weight:800;letter-spacing:-.03em;line-height:1.2}
+.ev-intro{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6;font-weight:500}
 .ev-legenda{display:flex;gap:18px;flex-wrap:wrap}
 .ev-key{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;color:var(--muted)}
 .ev-swatch{width:12px;height:12px;border-radius:3px;flex:none}
@@ -383,17 +391,19 @@ nav,section,footer,.fab{position:relative;z-index:1}
 }
 @media(prefers-reduced-motion:reduce){.promessa{animation:none}}
 .mecanismo-sub{font-size:15px;color:var(--muted);line-height:1.75;margin-top:20px;max-width:620px}
-.mec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);
+.corrente{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);
   border:1px solid var(--border);border-radius:20px;overflow:hidden}
-.mec-item{background:var(--bg);padding:clamp(24px,3vw,34px);display:flex;gap:16px;align-items:flex-start;
-  transition:background .3s var(--ease)}
-.mec-item:hover{background:var(--surface)}
-.mec-icon{width:36px;height:36px;flex:none;border-radius:9px;display:flex;align-items:center;justify-content:center;
-  background:var(--aglow);border:1px solid var(--iconbr)}
-.mec-step{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--faint);margin-bottom:9px}
-.mec-title{font-size:16px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px;line-height:1.35}
-.mec-text{font-size:13.5px;color:var(--muted);line-height:1.65}
+.corrente-item{background:var(--bg);padding:clamp(22px,2.6vw,30px);display:flex;gap:14px;
+  align-items:flex-start;transition:background .3s var(--ease)}
+.corrente-item:hover{background:var(--surface)}
+.corrente-num{font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--faint);
+  flex:none;padding-top:2px;font-variant-numeric:tabular-nums}
+.corrente-title{font-size:15px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px;line-height:1.35}
+.corrente-text{font-size:13.5px;color:var(--muted);line-height:1.65}
+.mec-frase{margin-top:clamp(28px,3.4vw,40px);font-size:clamp(1.05rem,2vw,1.5rem);
+  font-weight:800;letter-spacing:-.02em;line-height:1.35;color:var(--text);max-width:640px}
+@media(max-width:900px){.corrente{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.corrente{grid-template-columns:1fr}}
 
 /* ══════════════════════════════════════════════════════
    CTA FINAL
@@ -543,7 +553,6 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
   background-size:80px 80px;
 }
 .sec-orange .container{position:relative;z-index:1}
-.sec-orange .mec-icon svg{stroke:#fff}
 /* o gradiente animado não sobrevive em cima do laranja */
 .sec-orange .promessa{
   background:none;-webkit-text-fill-color:#fff;color:#fff;animation:none;
@@ -563,7 +572,6 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
   .prova-inner{grid-template-columns:1fr}
   .print-wrap{max-width:420px}
   .publico-grid{grid-template-columns:1fr}
-  .mec-grid{grid-template-columns:1fr}
   .nav-links{display:none}
   .menu-btn{display:block;margin-left:auto}
   .nav-cta{display:none}
@@ -625,30 +633,38 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
           O conteúdo enche<br>o grupo. O grupo<br><span class="accent-text">vende.</span>
         </h1>
         <p class="hero-sub" data-r>
-          Eu cuido do conteúdo de quem vende produto caro por grupo fechado.
-          A Arkano Club vende relógios assim. Estes são os números dela depois que assumi o perfil.
+          Eu construo e opero o conteúdo de negócios que vendem produtos caros
+          por grupo fechado ou encomenda.
         </p>
         <div class="hero-actions" data-r>
-          <a href="#falar" class="btn btn-primary">Quero esse resultado</a>
-          <a href="#prova" class="btn btn-ghost">Ver os números →</a>
+          <a href="#falar" class="btn btn-primary">Quero entender se isso funciona no meu negócio</a>
+          <a href="#prova" class="btn btn-ghost">Ver o case completo ↓</a>
         </div>
 
         <div class="placar" data-r>
           <div>
             <div class="placar-num">80</div>
-            <div class="placar-label">relógios vendidos<br>em julho</div>
+            <div class="placar-label">relógios<br>vendidos</div>
           </div>
           <div>
             <div class="placar-num">39</div>
-            <div class="placar-label">clientes novos<br>no mesmo mês</div>
+            <div class="placar-label">clientes<br>novos</div>
           </div>
           <div>
-            <div class="placar-num accent-text">1,06 mi</div>
-            <div class="placar-label">de visualizações<br>no mesmo mês</div>
+            <div class="placar-num accent-text">≈ R$ 400 mil</div>
+            <div class="placar-label">em vendas,<br>por estimativa</div>
+          </div>
+          <div>
+            <div class="placar-num">1,06 mi</div>
+            <div class="placar-label">de visualizações<br>no mês</div>
           </div>
           <p class="placar-fonte">
-            Vendas e clientes: o que o próprio dono da Arkano Club anunciou no grupo de clientes.
-            Visualizações: 1.061.024 em julho, o primeiro mês cheio de operação, direto do Instagram.
+            Arkano Club, julho de 2026, o primeiro mês cheio da operação.
+            Vendas e clientes novos são o que o próprio dono anunciou no grupo.
+            Visualizações vêm do Instagram.
+            <b>O valor em vendas é estimativa minha:</b> 80 vendas a um ticket médio
+            estimado de R$ 5.000, dentro de uma linha que vai de R$ 1.500 a R$ 40.000.
+            Não é faturamento apurado.
           </p>
         </div>
       </div>
@@ -706,8 +722,8 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
 
     <div class="prova-header" data-r>
       <p class="section-label">A prova</p>
-      <h2 class="h2">O dono anunciou o mês<br>no grupo dele.</h2>
-      <p>Não fui eu que contei o resultado. Foi o Guilherme, dono da Arkano Club, para os próprios clientes, no grupo onde as vendas acontecem.</p>
+      <h2 class="h2">O dono anunciou as vendas<br>no grupo dele.</h2>
+      <p>O resultado não veio de uma planilha minha. O próprio dono da Arkano Club anunciou as vendas no grupo onde a operação comercial acontece.</p>
     </div>
 
     <div class="prova-inner sem-print">
@@ -715,19 +731,25 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
       <div class="prova-leitura">
         <div class="leitura-item" data-r>
           <div class="leitura-num">80</div>
-          <div class="leitura-title">Relógios vendidos em um mês</div>
-          <div class="leitura-text">Produto caro, vendido por conversa. Cada uma dessas vendas passou por uma pessoa que entrou no grupo e ficou.</div>
+          <div class="leitura-title">Relógios vendidos no primeiro mês cheio</div>
+          <div class="leitura-text">Produto caro não fecha no feed. Fecha na conversa, depois que a pessoa já chegou no grupo sabendo o que está olhando.</div>
         </div>
         <div class="leitura-item" data-r>
           <div class="leitura-num">39</div>
           <div class="leitura-title">Clientes novos no mesmo mês</div>
-          <div class="leitura-text">Metade das vendas veio de gente que não conhecia a marca antes. É isso que o conteúdo faz: abastece o grupo de comprador novo.</div>
+          <div class="leitura-text">Gente que não comprava antes. Nesse ticket, comprador novo é o mais caro de trazer, e é justamente o que o conteúdo tem que abastecer.</div>
         </div>
         <div class="leitura-item" data-r>
-          <div class="leitura-num">julho</div>
-          <div class="leitura-title">O primeiro mês cheio de operação</div>
-          <div class="leitura-text">A primeira peça minha foi ao ar em 26/06/2026. Julho foi o primeiro mês inteiro rodando, e foi o mês que ele anunciou no grupo.</div>
+          <div class="leitura-num">≈ R$ 400 mil</div>
+          <div class="leitura-title">Em vendas no mês, por estimativa</div>
+          <div class="leitura-text">80 vendas a um ticket médio <b>estimado</b> de R$ 5.000. A linha da Arkano vai de R$ 1.500 a R$ 40.000. É conta minha a partir do ticket, não faturamento apurado.</div>
         </div>
+      </div>
+
+      <div class="atribuicao" data-r>
+        <p><b>O que eu controlo e o que eu não controlo.</b></p>
+        <p>Não estou dizendo que cada uma dessas vendas foi causada isoladamente por um carrossel. Preço, estoque, atendimento e a conversa no grupo são do Guilherme.</p>
+        <p>Meu trabalho foi construir e operar o conteúdo que alimenta essa operação: atrair comprador, gerar desejo, educar, construir confiança e levar gente qualificada para o grupo.</p>
       </div>
     </div>
 
@@ -736,6 +758,7 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
       <div>
         <p class="section-label">Evolução mês a mês</p>
         <h3>O que aconteceu no perfil, mês por mês.</h3>
+        <p class="ev-intro">Maio é o último mês antes de mim. Julho é o primeiro mês cheio de operação.</p>
       </div>
       <div class="ev-legenda">
         <span class="ev-key"><i class="ev-swatch sw-antes"></i>Antes de mim</span>
@@ -837,7 +860,7 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
           <span>dez</span><span>jan</span><span>fev</span><span>mar</span><span>abr</span>
           <span>mai</span><span>jun</span><span>jul</span><span>ago</span><span>set*</span>
         </div>
-        <p class="ev-nota">O perfil saiu de 8 publicações no último mês antes de mim para 29 e 30 nos dois meses seguintes. Constância é mecanismo, não volume por volume.</p>
+        <p class="ev-nota">O perfil saiu de 8 publicações no último mês antes de mim para 29 e 30 nos dois meses seguintes. Volume não é o que vende: serve para dar constância. Não afirmo que mais post gera mais venda.</p>
       </figure>
 
       <!-- FORMATO -->
@@ -1014,8 +1037,12 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
       levantados em 13/09/2026, cobrindo de dezembro de 2025 a 12 de setembro de 2026.
       Os totais de seguidores são leituras anotadas nas datas que aparecem no gráfico, porque o Instagram
       não devolve histórico dessa métrica. Vendas e clientes novos são o que o próprio dono publicou no grupo.
-      Nenhum número desta página foi estimado ou deduzido. Os rótulos em cima das barras aparecem
-      encurtados para caber: o valor cheio está na tabela acima e ao passar o mouse na barra.
+      <b>Um único número desta página é estimativa, e está marcado como tal:</b> os aproximadamente
+      R$ 400 mil em vendas. Ele sai de 80 vendas a um ticket médio estimado por mim em R$ 5.000,
+      dentro de uma linha que vai de R$ 1.500 a R$ 40.000. Não é faturamento apurado e não foi
+      informado pela Arkano. Todo o resto vem medido da fonte, sem arredondar para cima nem deduzir.
+      Os rótulos em cima das barras aparecem encurtados para caber: o valor cheio está na tabela
+      acima e ao passar o mouse na barra.
     </p>
 
   </div>
@@ -1029,30 +1056,33 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
     <div class="publico-header" data-r>
       <p class="section-label">Para quem é</p>
       <h2 class="h2">Eu trabalho com um tipo<br>de negócio só.</h2>
-      <p>Quem vende produto caro por grupo fechado ou por encomenda. O conteúdo não fecha a venda sozinho: ele leva a pessoa certa para dentro do grupo, e a venda acontece na conversa.</p>
+      <p>Produto caro não pode depender de conteúdo genérico. O conteúdo não fecha a venda sozinho: ele leva a pessoa certa para dentro do grupo, e a venda acontece na conversa.</p>
     </div>
 
     <div class="publico-grid" data-r>
       <div class="publico-col">
         <div class="publico-col-title">É o seu caso</div>
-        <p class="publico-col-sub">Ticket alto, venda por conversa, grupo ou encomenda.</p>
+        <p class="publico-col-sub">Produto físico de maior valor, vendido por conversa.</p>
         <ul class="publico-list">
           <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
-            <div>Relógios<br><span>originais, peças de coleção, importação própria</span></div></li>
+            <div>Relógios<br><span>originais, coleção, importação própria</span></div></li>
           <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
             <div>Joias e semijoias<br><span>peça a peça, venda por catálogo</span></div></li>
           <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
             <div>Sneakers<br><span>lançamento, hype, numeração limitada</span></div></li>
           <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
+            <div>Eletrônicos<br><span>linha Apple, setup, ticket alto</span></div></li>
+          <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
             <div>Importados sob encomenda<br><span>compra no exterior, prazo, rastreio</span></div></li>
           <li><i class="mark mark-sim"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></i>
-            <div>Eletrônicos de ticket alto<br><span>iPhone, linha Apple, setup</span></div></li>
+            <div>Outro produto físico de maior valor<br><span>se a venda passa por conversa, conta</span></div></li>
         </ul>
+        <p class="publico-nota"><b>E a venda acontece por grupo, WhatsApp, lista, encomenda ou conversa comercial.</b> Se o fechamento é no atendimento e não no carrinho, o mecanismo serve.</p>
       </div>
 
       <div class="publico-col">
         <div class="publico-col-title">Não é o seu caso</div>
-        <p class="publico-col-sub">Não atendo, e prefiro dizer agora.</p>
+        <p class="publico-col-sub">Não é onde eu sou a melhor escolha, e prefiro dizer agora.</p>
         <ul class="publico-list">
           <li><i class="mark mark-nao"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="3.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></i>
             <div>Mentoria<br><span>individual ou em grupo</span></div></li>
@@ -1060,9 +1090,11 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
             <div>Curso<br><span>gravado ou ao vivo</span></div></li>
           <li><i class="mark mark-nao"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="3.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></i>
             <div>Infoproduto em geral<br><span>ebook, comunidade paga, lançamento</span></div></li>
+          <li><i class="mark mark-nao"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="3.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></i>
+            <div>Social media genérico<br><span>postar por postar, sem operação de venda atrás</span></div></li>
         </ul>
         <p class="publico-nota">
-          Não é julgamento de mercado. <b>É que o meu mecanismo depende de um produto físico, caro, com um grupo ou uma lista do outro lado.</b> Fora disso eu não tenho como repetir o que fiz na Arkano.
+          Não é julgamento de mercado. <b>O meu mecanismo depende de um produto físico, caro, com um grupo ou uma lista do outro lado.</b> Fora disso eu não tenho como repetir o que fiz na Arkano, e prefiro não vender o que não sei repetir.
         </p>
       </div>
     </div>
@@ -1077,43 +1109,55 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
     <div class="mecanismo-header" data-r>
       <p class="section-label">Como funciona</p>
       <h2 class="promessa">O feed atrai.<br>O grupo fecha.</h2>
-      <p class="mecanismo-sub">Quatro peças, e é só isso. O conteúdo existe para colocar comprador dentro do grupo e deixar ele pronto para comprar antes de você falar qualquer coisa.</p>
+      <p class="mecanismo-sub">O Instagram não precisa fechar a venda sozinho. Mas precisa preparar melhor quem vai comprar.</p>
     </div>
 
-    <div class="mec-grid" data-r>
-      <div class="mec-item">
-        <div class="mec-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+    <div class="corrente" data-r>
+      <div class="corrente-item">
+        <div class="corrente-num">01</div>
         <div>
-          <div class="mec-step">01</div>
-          <div class="mec-title">Falo com quem compra, não com quem curte</div>
-          <div class="mec-text">O conteúdo é feito para o perfil de quem já paga caro no seu produto. Audiência grande sem poder de compra não serve, e eu não persigo esse número.</div>
+          <div class="corrente-title">O feed atrai</div>
+          <div class="corrente-text">Quem vende caro não precisa de audiência grande. Precisa da audiência certa passando na frente da peça.</div>
         </div>
       </div>
-      <div class="mec-item">
-        <div class="mec-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v5h5"/><path d="M8.5 13h7"/><path d="M8.5 16.5h4"/></svg></div>
+      <div class="corrente-item">
+        <div class="corrente-num">02</div>
         <div>
-          <div class="mec-step">02</div>
-          <div class="mec-title">A peça educa antes de vender</div>
-          <div class="mec-text">Quem entende o produto pergunta preço, não pergunta se é original. O conteúdo tira a objeção antes de ela chegar na sua conversa, e o atendimento fica mais curto.</div>
+          <div class="corrente-title">O conteúdo educa</div>
+          <div class="corrente-text">Quem entende o produto pergunta preço. Quem não entende pergunta se é original.</div>
         </div>
       </div>
-      <div class="mec-item">
-        <div class="mec-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+      <div class="corrente-item">
+        <div class="corrente-num">03</div>
         <div>
-          <div class="mec-step">03</div>
-          <div class="mec-title">A chamada para o grupo entra na peça certa</div>
-          <div class="mec-text">Nem todo post puxa para o grupo. A maior parte existe para trazer gente e ganhar confiança. O convite entra quando a pessoa já está pronta, porque convite em todo post vira ruído e para de funcionar.</div>
+          <div class="corrente-title">O conteúdo gera desejo</div>
+          <div class="corrente-text">A peça mostra a peça. O que faz a pessoa querer é o contexto em volta dela, não a foto do relógio sozinha.</div>
         </div>
       </div>
-      <div class="mec-item">
-        <div class="mec-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#bd4905" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17s1.5-6 9-6 9 6 9 6"/><circle cx="12" cy="6" r="3"/></svg></div>
+      <div class="corrente-item">
+        <div class="corrente-num">04</div>
         <div>
-          <div class="mec-step">04</div>
-          <div class="mec-title">O grupo recebe gente nova toda semana</div>
-          <div class="mec-text">Foi o que aconteceu na Arkano: o grupo parou de depender de indicação para crescer. Com fluxo constante entrando, a venda volta a ser conversa, não sorte.</div>
+          <div class="corrente-title">O conteúdo constrói confiança</div>
+          <div class="corrente-text">Ticket alto trava na desconfiança. Aparecer com constância e com critério é o que destrava.</div>
+        </div>
+      </div>
+      <div class="corrente-item">
+        <div class="corrente-num">05</div>
+        <div>
+          <div class="corrente-title">O CTA leva a pessoa certa para o grupo</div>
+          <div class="corrente-text">Nem todo post puxa para o grupo. O convite entra quando a pessoa já está pronta, senão vira ruído e para de funcionar.</div>
+        </div>
+      </div>
+      <div class="corrente-item">
+        <div class="corrente-num">06</div>
+        <div>
+          <div class="corrente-title">O grupo conduz a operação comercial</div>
+          <div class="corrente-text">É lá que a venda acontece, na conversa. O conteúdo entrega gente preparada; o fechamento é seu.</div>
         </div>
       </div>
     </div>
+
+    <p class="mec-frase" data-r>Seu grupo pode estar cheio.<br>A pergunta é quantas pessoas chegaram prontas para comprar.</p>
 
   </div>
 </section>
@@ -1127,11 +1171,11 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
       <h2 class="h2" style="margin-bottom:18px">
         Me conta o que você vende<br>e para quem <span class="accent-text">você vende.</span>
       </h2>
-      <p>Eu te digo na conversa se o seu caso se parece com o da Arkano ou não. Se não se parecer, eu falo.</p>
+      <p>Me conta o que você vende e para quem você vende. Eu te digo na conversa se o seu caso se parece com o da Arkano ou não. Se não se parecer, eu falo.</p>
       <div class="cta-actions">
         <a href="https://wa.me/5511993734567?text=Ol%C3%A1%20Gabriel%2C%20vim%20pela%20p%C3%A1gina%20de%20gest%C3%A3o%20de%20conte%C3%BAdo.%20Eu%20vendo%20produto%20de%20ticket%20alto%20por%20grupo%20fechado%20e%20quero%20saber%20como%20funciona." class="btn btn-primary btn-lg" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.117 1.522 5.847L.057 24l6.304-1.654A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.214-3.727.977.998-3.635-.234-.374A9.818 9.818 0 1112 21.818z"/></svg>
-          Falar sobre gestão de conteúdo
+          Quero entender se isso funciona no meu negócio
         </a>
       </div>
     </div>
