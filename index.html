@@ -130,7 +130,7 @@ nav,section,footer,.fab{position:relative;z-index:1}
 .accent-text{color:var(--accent)}
 
 /* ─── HEADINGS ────────────────────────────────────────── */
-.h1{font-size:clamp(2.05rem,4.4vw,3.6rem);font-weight:900;letter-spacing:-.04em;line-height:1.07}
+.h1{font-size:clamp(2rem,4vw,3.3rem);font-weight:900;letter-spacing:-.04em;line-height:1.07}
 .h2{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:800;letter-spacing:-.035em;line-height:1.1}
 
 /* ─── DIVIDER ─────────────────────────────────────────── */
@@ -162,22 +162,24 @@ nav,section,footer,.fab{position:relative;z-index:1}
 /* ══════════════════════════════════════════════════════
    HERO
 ══════════════════════════════════════════════════════ */
-.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;padding:clamp(96px,12vh,118px) 0 clamp(56px,7vh,80px);overflow:hidden}
 /* A coluna esquerda alinha com o container; a direita vai até a borda da tela.
    Usa 100% da seção (não 100vw) pra não contar a barra de rolagem. */
 /* herói empilhado e centralizado: imagem em cima, texto embaixo */
 .hero-grid{
   display:flex;flex-direction:column;align-items:center;
-  gap:clamp(28px,3.6vw,48px);
+  gap:clamp(20px,2.6vw,32px);
   max-width:1160px;margin:0 auto;
   padding:0 clamp(20px,5vw,72px);
   text-align:center;
 }
-.hero-visual{order:-1;width:100%;max-width:680px}
+/* o 54vh amarra a imagem à altura da tela: em monitor baixo ela encolhe
+   pra headline, subtítulo e CTA não caírem abaixo da dobra */
+.hero-visual{order:-1;width:100%;max-width:min(clamp(340px,44vw,560px),54vh)}
 .hero-content{width:100%;max-width:780px;display:flex;flex-direction:column;align-items:center}
-.hero-tag{margin-bottom:28px}
-.hero-title{margin-bottom:22px}
-.hero-sub{font-size:clamp(15px,1.8vw,17.5px);color:var(--muted);line-height:1.7;margin-bottom:34px;max-width:560px}
+.hero-tag{margin-bottom:22px}
+.hero-title{margin-bottom:18px}
+.hero-sub{font-size:clamp(15px,1.8vw,17px);color:var(--muted);line-height:1.65;margin-bottom:28px;max-width:560px}
 .hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:38px}
 
 /* placar do herói */
