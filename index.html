@@ -130,7 +130,7 @@ nav,section,footer,.fab{position:relative;z-index:1}
 .accent-text{color:var(--accent)}
 
 /* ─── HEADINGS ────────────────────────────────────────── */
-.h1{font-size:clamp(2.05rem,4vw,3.25rem);font-weight:900;letter-spacing:-.04em;line-height:1.07}
+.h1{font-size:clamp(2.05rem,4.4vw,3.6rem);font-weight:900;letter-spacing:-.04em;line-height:1.07}
 .h2{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:800;letter-spacing:-.035em;line-height:1.1}
 
 /* ─── DIVIDER ─────────────────────────────────────────── */
@@ -165,23 +165,27 @@ nav,section,footer,.fab{position:relative;z-index:1}
 .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden}
 /* A coluna esquerda alinha com o container; a direita vai até a borda da tela.
    Usa 100% da seção (não 100vw) pra não contar a barra de rolagem. */
+/* herói empilhado e centralizado: imagem em cima, texto embaixo */
 .hero-grid{
-  display:grid;grid-template-columns:1.05fr 1fr;align-items:center;
-  gap:clamp(28px,4vw,60px);
+  display:flex;flex-direction:column;align-items:center;
+  gap:clamp(28px,3.6vw,48px);
   max-width:1160px;margin:0 auto;
   padding:0 clamp(20px,5vw,72px);
+  text-align:center;
 }
+.hero-visual{order:-1;width:100%;max-width:680px}
+.hero-content{width:100%;max-width:780px;display:flex;flex-direction:column;align-items:center}
 .hero-tag{margin-bottom:28px}
 .hero-title{margin-bottom:22px}
-.hero-sub{font-size:clamp(15px,1.8vw,17px);color:var(--muted);line-height:1.7;margin-bottom:36px;max-width:440px}
-.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.hero-sub{font-size:clamp(15px,1.8vw,17.5px);color:var(--muted);line-height:1.7;margin-bottom:34px;max-width:560px}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:38px}
 
 /* placar do herói */
-.placar{display:grid;grid-template-columns:repeat(2,auto);gap:clamp(16px,2.4vw,26px) clamp(18px,3vw,32px);
+.placar{display:grid;grid-template-columns:repeat(4,auto);justify-content:center;gap:clamp(16px,2.4vw,24px) clamp(22px,3.4vw,44px);
   padding-top:28px;border-top:1px solid var(--border)}
 .placar-num{font-size:clamp(1.5rem,2.6vw,2rem);white-space:nowrap;font-weight:800;letter-spacing:-.045em;line-height:1}
 .placar-label{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.45}
-.placar-fonte{font-size:11px;color:var(--faint);margin-top:14px;line-height:1.6;grid-column:1/-1;max-width:520px}
+.placar-fonte{font-size:11.5px;color:var(--faint);margin-top:16px;line-height:1.65;grid-column:1/-1;max-width:660px;margin-left:auto;margin-right:auto}
 .placar-fonte b{color:var(--muted);font-weight:700}
 
 /* visual do herói */
@@ -346,6 +350,20 @@ nav,section,footer,.fab{position:relative;z-index:1}
 .fonte-bloco{margin-top:26px;padding-top:22px;border-top:1px solid var(--border);
   font-size:11.5px;color:var(--faint);line-height:1.7;max-width:820px}
 .fonte-bloco b{color:var(--muted);font-weight:600}
+
+/* ─── vitrine de nichos em loop ─────────────────────── */
+.vitrine{position:relative;overflow:hidden;margin-bottom:clamp(36px,4.5vw,56px);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.vitrine-track{display:flex;width:max-content;animation:vitrine-roda 34s linear infinite}
+.vitrine:hover .vitrine-track{animation-play-state:paused}
+@keyframes vitrine-roda{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.vitrine-set{display:flex;gap:clamp(12px,1.6vw,20px);padding-right:clamp(12px,1.6vw,20px);flex:none}
+.vitrine-card{flex:none;display:block;width:clamp(148px,17vw,214px);
+  border-radius:16px;overflow:hidden;line-height:0;
+  box-shadow:0 14px 34px rgba(0,0,0,.34)}
+.vitrine-card img{width:100%;height:auto;aspect-ratio:1027/1635;object-fit:cover}
+@media(prefers-reduced-motion:reduce){.vitrine-track{animation:none}}
 
 /* ══════════════════════════════════════════════════════
    PARA QUEM É
@@ -563,11 +581,8 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
 ══════════════════════════════════════════════════════ */
 @media(max-width:960px){
   .hero{min-height:auto;padding:120px 0 72px}
-  .hero-grid{grid-template-columns:1fr;text-align:center;gap:44px}
-  .hero-sub{max-width:100%;margin-left:auto;margin-right:auto}
-  .hero-actions{justify-content:center}
-  .placar{justify-content:center;text-align:center}
-  .hero-visual{order:-1}
+  .hero-grid{gap:38px}
+  .placar{grid-template-columns:repeat(2,auto)}
 
   .prova-inner{grid-template-columns:1fr}
   .print-wrap{max-width:420px}
@@ -580,8 +595,7 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
   .ev-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
-  .placar{grid-template-columns:1fr 1fr;gap:20px 18px;text-align:left;justify-content:start}
-  .placar-fonte{text-align:left}
+  .placar{gap:18px 16px}
   .print-wrap{max-width:100%}
   .ev-topo{align-items:flex-start}
   .ev-xs span{font-size:8.5px}
@@ -726,7 +740,17 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
       <p>O resultado não veio de uma planilha minha. O próprio dono da Arkano Club anunciou as vendas no grupo onde a operação comercial acontece.</p>
     </div>
 
-    <div class="prova-inner sem-print">
+    <div class="prova-inner">
+      <div class="print-wrap" data-r="fade">
+        <div class="print-frame">
+          <img src="https://gvdesiigner-conteudo.vercel.app/prova-arkano-grupo.png" loading="lazy" decoding="async"
+               alt="Mensagem de Guilherme, dono da Arkano Club, no grupo de clientes: julho fechou com mais de 80 relógios vendidos e mais de 39 novos clientes">
+        </div>
+        <p class="print-legenda">
+          Mensagem do <b>Guilherme, dono da Arkano Club</b>, no grupo fechado de clientes,
+          no fechamento de julho de 2026. Nome e foto preservados como estão no grupo.
+        </p>
+      </div>
 
       <div class="prova-leitura">
         <div class="leitura-item" data-r>
@@ -746,11 +770,13 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
         </div>
       </div>
 
-      <div class="atribuicao" data-r>
-        <p><b>O que eu controlo e o que eu não controlo.</b></p>
-        <p>Não estou dizendo que cada uma dessas vendas foi causada isoladamente por um carrossel. Preço, estoque, atendimento e a conversa no grupo são do Guilherme.</p>
-        <p>Meu trabalho foi construir e operar o conteúdo que alimenta essa operação: atrair comprador, gerar desejo, educar, construir confiança e levar gente qualificada para o grupo.</p>
-      </div>
+
+    </div>
+
+    <div class="atribuicao" data-r>
+      <p><b>O que eu controlo e o que eu não controlo.</b></p>
+      <p>Não estou dizendo que cada uma dessas vendas foi causada isoladamente por um carrossel. Preço, estoque, atendimento e a conversa no grupo são do Guilherme.</p>
+      <p>Meu trabalho foi construir e operar o conteúdo que alimenta essa operação: atrair comprador, gerar desejo, educar, construir confiança e levar gente qualificada para o grupo.</p>
     </div>
 
     <!-- ── gráficos ───────────────────────────────────── -->
@@ -1057,6 +1083,48 @@ footer{padding:32px 0;border-top:1px solid var(--border)}
       <p class="section-label">Para quem é</p>
       <h2 class="h2">Eu trabalho com um tipo<br>de negócio só.</h2>
       <p>Produto caro não pode depender de conteúdo genérico. O conteúdo não fecha a venda sozinho: ele leva a pessoa certa para dentro do grupo, e a venda acontece na conversa.</p>
+    </div>
+
+
+    <div class="vitrine" data-r="fade">
+      <div class="vitrine-track">
+        <div class="vitrine-set">
+        <picture class="vitrine-card">
+          <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/cards/nicho-relogios.webp">
+          <img src="https://gvdesiigner-conteudo.vercel.app/cards/nicho-relogios.png" loading="lazy" decoding="async" alt="Relógios">
+        </picture>
+        <picture class="vitrine-card">
+          <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/cards/nicho-joias.webp">
+          <img src="https://gvdesiigner-conteudo.vercel.app/cards/nicho-joias.png" loading="lazy" decoding="async" alt="Joias e semijoias">
+        </picture>
+        <picture class="vitrine-card">
+          <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/cards/nicho-sneakers.webp">
+          <img src="https://gvdesiigner-conteudo.vercel.app/cards/nicho-sneakers.png" loading="lazy" decoding="async" alt="Sneakers">
+        </picture>
+        <picture class="vitrine-card">
+          <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/cards/nicho-apple.webp">
+          <img src="https://gvdesiigner-conteudo.vercel.app/cards/nicho-apple.png" loading="lazy" decoding="async" alt="Produtos Apple">
+        </picture>
+        </div>
+        <div class="vitrine-set" aria-hidden="true">
+        <picture class="vitrine-card">
+          <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/cards/nicho-relogios.webp">
+          <img src="https://gvdesiigner-conteudo.vercel.app/cards/nicho-relogios.png" loading="lazy" decoding="async">
+        </picture>
+        <picture class="vitrine-card">
+          <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/cards/nicho-joias.webp">
+          <img src="https://gvdesiigner-conteudo.vercel.app/cards/nicho-joias.png" loading="lazy" decoding="async">
+        </picture>
+        <picture class="vitrine-card">
+          <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/cards/nicho-sneakers.webp">
+          <img src="https://gvdesiigner-conteudo.vercel.app/cards/nicho-sneakers.png" loading="lazy" decoding="async">
+        </picture>
+        <picture class="vitrine-card">
+          <source type="image/webp" srcset="https://gvdesiigner-conteudo.vercel.app/cards/nicho-apple.webp">
+          <img src="https://gvdesiigner-conteudo.vercel.app/cards/nicho-apple.png" loading="lazy" decoding="async">
+        </picture>
+        </div>
+      </div>
     </div>
 
     <div class="publico-grid" data-r>
