@@ -1,31 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
-  "redirects": [
-    {
-      "source": "/portfolio",
-      "destination": "/portfolio/",
-      "permanent": false
-    },
-    {
-      "source": "/conteudo",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/conteudo/:path*",
-      "destination": "/",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/portfolio/",
-      "destination": "https://gvdesiigner.vercel.app"
-    },
-    {
-      "source": "/portfolio/:path*",
-      "destination": "https://gvdesiigner.vercel.app/:path*"
-    }
-  ]
+  "cleanUrls": true
 }
